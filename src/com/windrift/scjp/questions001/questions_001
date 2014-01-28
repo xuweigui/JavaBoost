@@ -294,6 +294,8 @@ B. Nav.Direction d = NORTH;
 C. Direction d = Direction.NORTH;
 D. Nav.Direction d = Nav.Direction.NORTH;
 Answer: D
+
+
 Question 15
 Given:
 10. interface Foo { int bar(); }
@@ -308,9 +310,11 @@ Given:
 Which code, inserted at line 15, allows the class Sprite to compile?
 A. Foo { public int bar() { return 1; } }
 B. new Foo { public int bar() { return 1; } }
-C. newFoo() { public int bar(){return 1; } }
+C. new Foo() { public int bar(){return 1; } }
 D. new class Foo { public int bar() { return 1; } }
 Answer: C
+
+
 Question 16
 Click the Exhibit button.
 10. interface Foo {
