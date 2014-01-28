@@ -1,0 +1,40 @@
+<class-diagram version="1.0.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" corner="BOTTOM_RIGHT" language="java" name="com.windrift.effectivejava.creatdestroyobj.NutritionFacts" 
+    project="Interview" file="/Interview/src/com/windrift/effectivejava/creatdestroyobj/BuilderPattern.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="140" y="153"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="com.windrift.effectivejava.creatdestroyobj.BuilderPattern" 
+    project="Interview" file="/Interview/src/com/windrift/effectivejava/creatdestroyobj/BuilderPattern.java" 
+    binary="false">    
+    <position height="-1" width="-1" x="353" y="335"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class id="3" corner="BOTTOM_RIGHT" language="java" 
+    name="com.windrift.effectivejava.creatdestroyobj.NutritionFacts.Builder" project="Interview" 
+    file="/Interview/src/com/windrift/effectivejava/creatdestroyobj/BuilderPattern.java" binary="false">    
+    <position height="-1" width="-1" x="619" y="144"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <nesting id="4">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
