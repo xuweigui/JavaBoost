@@ -368,10 +368,12 @@ Which two code fragments, inserted individually at line 2 of the Beta
 declaration, will allow this code to compile? (Choose two.)
 A. import sun.scjp.Color.*;
 B. import static sun.scjp.Color.*;
-C. import sun.scjp.Color; import static sun.scjp.Color.*;
+C. import static sun.scjp.Color; import static sun.scjp.Color.*;
 D. import sun.scjp.*; import static sun.scjp.Color.*;
-E. import sun.scjp.Color; import static sun.scjp.Color.GREEN;
+E. import static sun.scjp.Color; import static sun.scjp.Color.GREEN;
 Answer: CE
+Gary: CE missing static in original questions
+
 Question 18
 Given:
 1. public interface A {
@@ -385,6 +387,8 @@ B. public interface B implements A {}
 C. public interface B instanceOf A {}
 D. public interface B inheritsFrom A { }
 Answer: A
+
+
 Question 19
 Given:
 1. class TestA {
@@ -402,6 +406,9 @@ B. TestB
 C. Compilation fails.
 D. An exception is thrown at runtime.
 Answer: B
+
+
+
 Question 20
 Given:
 1. interface TestA { String toString(); }
@@ -420,6 +427,9 @@ D. Compilation fails because of an error in line 1.
 E. Compilation fails because of an error in line 4.
 F. Compilation fails because of an error in line 5.
 Answer: A
+Gary: Intellij indicates the toString method in TestA overrides the toString method in Object
+
+
 Question 21
 Given:
 11. public abstract class Shape {
@@ -449,6 +459,9 @@ E. Circle c = new Circle();
 c.Shape.setAnchor(10,10);
 c.Shape.draw();
 Answer: C
+
+
+
 Question 22
 Given:
 10. abstract public class Employee {
@@ -467,6 +480,8 @@ B. public double getSalesAmount() { return 1230.45; }
 C. private double getSalesAmount() { return 1230.45; }
 D. protected double getSalesAmount() { return 1230.45; }
 Answer: BD
+
+
 Question 23
 Given:
 10. interface Data { public void load(); }
