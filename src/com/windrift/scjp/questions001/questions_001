@@ -1,3 +1,5 @@
+From 310-055-Q&A-Troytec.pdf
+
 
 Question 1
 Given:
@@ -276,6 +278,8 @@ D. package com.sun.scjp;
 public class TerraCarta {
 public double halfway() { return DIAMETER/2.0; } }
 Answer: AC
+
+
 Question 14
 Given:
 10. class Nav{
