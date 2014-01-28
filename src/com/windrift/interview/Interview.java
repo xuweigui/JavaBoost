@@ -1,11 +1,8 @@
 package com.windrift.interview;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -60,13 +57,13 @@ public class Interview {
         try{
             a1 = a.getBytes("utf8");
             String t = new String(a.getBytes("utf8"),"utf8" );
-            System.out.println(a.equals(t) + t);
+            System.out.println(a.equals(t) + t); //true徐为贵
 
             t = new String(a.getBytes("ascii"),"ascii" );
-            System.out.println(a.equals(t) + t);
+            System.out.println(a.equals(t) + t); //false???
 
             t = new String(a.getBytes("gb2312"),"gb2312" );
-            System.out.println(a.equals(t) + t);
+            System.out.println(a.equals(t) + t); //true徐为贵
 
           
         } catch (UnsupportedEncodingException e) {
