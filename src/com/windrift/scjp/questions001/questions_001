@@ -151,7 +151,7 @@ Assume that country is set for each class.
 Given:
 10. public class Money {
 11. private String country, name;
-12. public getCountry() { return country; }
+12. public String getCountry() { return country; }
 13.}
 and:
 24. class Yen extends Money {
@@ -188,7 +188,7 @@ Answer: D
 Question 10
 Given:
 11. public class Person {
-12. private name;
+12. private String name;
 13. public Person(String name) {
 14. this.name = name;
 15. }
@@ -206,12 +206,14 @@ Person object to be removed as a duplicate.
 D. The time to determine whether a Person object is contained in a
 HashSet is constant and does NOT depend on the size of the map.
 Answer: A
+
+
 Question 11
 Given:
 23. Object [] myObjects = {
-24. new integer(12),
+24. new Integer(12),
 25. new String(”foo”),
-26. new integer(5),
+26. new Integer(5),
 27. new Boolean(true)
 28. };
 29. Arrays.sort(myObjects);
@@ -226,11 +228,13 @@ C. A ClassCastException occurs in line 29.
 D. A ClassCastException occurs in line 31.
 E. The value of all four objects prints in natural order.
 Answer: C
+
+
 Question 12
 12. Given:
 13. public class Pass {
-14. public static void main(String [1 args) {
-15. int x 5;
+14. public static void main(String [] args) {
+15. int x = 5;
 16. Pass p = new Pass();
 17. p.doStuff(x);
 18. System.out.print(” main x = “+ x);
@@ -248,6 +252,8 @@ D. doStuffx = 5 main x = 5
 E. doStuffx = 5 main x = 6
 F. doStuffx = 6 main x = 5
 Answer: D
+
+
 Question 13
 Given:
 10. package com.sun.scjp;
