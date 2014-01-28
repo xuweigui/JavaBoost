@@ -510,6 +510,9 @@ public void Data.load() { /*do something*/ }
 public void Info.load() { /*do something*/ }
 }
 Answer: A
+Gary: "public class Employee extends Info implements Data" can be "public class Employee extends Info" or "public class Employee implements Data"
+
+
 Question 24
 Given:
 11. public abstract class Shape {
