@@ -662,6 +662,8 @@ C. 12
 D. 17
 E. 24
 Answer: B
+
+
 Question 28
 Given:
 55. int []x= {1, 2,3,4, 5};
@@ -673,18 +675,23 @@ B. Line 57 will print the value 3.
 C. Compilation will fail because of an error in line 55.
 D. Compilation will fail because of an error in line 56.
 Answer: B
+
+
 Question 30
 Given:
 35. String #name = “Jane Doe”;
-36.int$age=24;
-37. Double_height = 123.5;
-38. double~temp = 37.5;
+36.int $age=24;
+37. Double _height = 123.5;
+38. double ~temp = 37.5;
 Which two are true? (Choose two.)
 A. Line 35 will not compile.
 B. Line 36 will not compile.
 C. Line 37 will not compile.
 D. Line 38 will not compile.
 Answer: AD
+Gary:  A variable's name can be any legal identifier — an unlimited-length sequence of Unicode letters and digits, beginning with a letter, the dollar sign "$", or the underscore character "_".
+
+
 Question 31
 Which two code fragments correctly create and initialize a static array
 of int elements? (Choose two.)
@@ -695,6 +702,10 @@ C. static final int[] a = new int[2] { 100,200 };
 D. static final int[] a;
 static void init() { a = new int[3]; a[0]=100; a[1]=200; }
 Answer: AB
+Gary: in array declaration we have to give either size or initialization elements but not both
+      Refer to ArrayDeclaration
+
+
 Question 32
 Given:
 11. public class Ball {
@@ -712,6 +723,8 @@ C. for( Color c; c.hasNext() ; c.next())
 D. for( Color c = Color[0]; c <= Color[2]; c++)
 E. for( Color c = Color.RED; c <= Color.BLUE; c++)
 Answer: A
+
+
 Question 33
 Given:
 10. public class Fabric
@@ -734,6 +747,9 @@ D. if( RED.getRGB() < BLUE.getRGB() ) {}
 E. Color purple = Color.BLUE + Color.RED;
 F. if( Color.RED.ordinal() < Color.BLUE.ordinal() ) {}
 Answer: BF
+
+
+
 Question 34
 Given:
 11. public enum Title {
