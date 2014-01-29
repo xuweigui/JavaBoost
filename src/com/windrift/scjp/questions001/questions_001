@@ -548,6 +548,8 @@ private int radius;
 public void draw() { / code here */ }
 }
 Answer: BE
+
+
 Question 25
 Which two classes correctly implement both the java.lang.Runnable
 and the java.lang.Clonable interfaces? (Choose two.)
@@ -577,6 +579,8 @@ public void run() { / do something */ }
 public Object clone() { / make a copy */ }
 }
 Answer: CD
+
+
 Question26
 Click the Exhibit button.
 1. public class GoTest {
@@ -613,6 +617,8 @@ go in Goban
 go in Sente
 E. Compilation fails because of an error in line 17.
 Answer: C
+
+
 Question 27
 Given:
 11. public static void parse(String str) {
@@ -634,6 +640,9 @@ C. A ParseException is thrown by the parse method at runtime.
 D. A NumberFormatException is thrown by the parse method at
 runtime.
 Answer: B
+Gary: f defined in try block can not be accessed in catch block
+
+
 Question 28
 Click the Exhibit button.
 1. public class Test {
