@@ -1,4 +1,4 @@
-From 310-055-Q&A-Troytec.pdf
+﻿From 310-055-Q&A-Troytec.pdf
 
 
 Question 1
@@ -770,6 +770,8 @@ C. Compilation fails because of an error in line 12.
 D. Compilation fails because of an error in line 15.
 E. Compilation fails because of an error in line 20.
 Answer: A
+
+
 Question 35
 Given:
 11. public static void main(String[] args) {
@@ -784,6 +786,9 @@ C. Compilation fails because of an error in line 13.
 D. Compilation fails because of an error in line 14.
 E. A ClassCastException is thrown at runtime.
 Answer: A
+Gary: array is an object?
+
+
 Question 36
 Given:
 10. class Foo {
@@ -796,6 +801,8 @@ B. Foo.alpha() is a valid invocation of alpha().
 C. Method beta() can directly call method alpha().
 D. Method alpha() can directly call method beta().
 Answer: BC
+
+
 Question 37
 A programmer needs to create a logging method that can accept an
 arbitrary number of arguments. For example, it may be called in these
@@ -809,6 +816,8 @@ B. public void logIt(String [] msgs)
 C. public void logIt(String... msgs)
 D. public void logIt(String msg1, String msg2, String msg3)
 Answer: C
+
+
 Question 38
 A programmer is designing a class to encapsulate the information
 about an inventory item. A JavaBeans component is needed to
@@ -825,6 +834,8 @@ C. setItemId(int itemId)
 D. mutateItemId(int itemId)
 E. updateItemID(int itemId)
 Answer: C
+
+
 Question 39
 Click the Exhibit button.
 1. public class A {
