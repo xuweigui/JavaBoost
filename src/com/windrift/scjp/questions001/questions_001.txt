@@ -863,6 +863,8 @@ C. Line 28 prints the value 1 to System.out.
 D. A runtime error occurs when line 25 executes.
 E. Compilation fails because of an error on line 28.
 Answer: A
+
+
 Question 40
 A JavaBeans component has the following field:
 11. private boolean enabled;
@@ -877,6 +879,9 @@ public boolean isEnabled()
 D. public boolean setEnabled( boolean enabled)
 public boolean getEnabled()
 Answer: AC
+Gary: A is correct as well....
+
+
 Question 41
 41. Given:
 10. class One {
@@ -896,6 +901,9 @@ C. public Two foo() { return this; }
 D. public One foo() { return this; }
 E. public Object foo() { return this; }
 Answer: CD
+Gary: return type can be a subclass of the return type of the overridden method
+
+
 Question 42
 Given:
 10. class One {
@@ -912,6 +920,8 @@ C. public void foo() { /* more code here */ }
 D. private void foo() { /* more code here */ }
 E. protected void foo() { /* more code here */ }
 Answer: BCE
+
+
 Question 43
 Click the Exhibit button.
 1. public interface A {
@@ -945,6 +955,9 @@ B. Compilation of class C will fail because of an error in line 2.
 C. Compilation of class C will fail because of an error in line 6.
 D. Compilation of class AImpl will fail because of an error in line 2.
 Answer: C
+Gary: same as question 41
+
+
 Question 44
 Click the Exhibit button.
 1. public class A {
@@ -965,6 +978,8 @@ B. Line 26 prints ‘b” to System.out.
 C. An exception is thrown at line 26 at runtime.
 D. Compilation of class A will fail due to an error in line 6.
 Answer: A
+
+
 Question 45
 Given:
 1. public class A {
@@ -983,6 +998,8 @@ B. Compilation fails because of an error in line 7.
 C. Compilation fails because of an error in line 4.
 D. Compilation succeeds and no runtime errors with class A occur.
 Answer: C
+
+
 Question 46
 46. Given:
 10. class Line {
@@ -999,6 +1016,8 @@ B. Line.Point p = new Line.Point();
 C. The Point class cannot be instatiated at line 15.
 D. Line 1 = new Line() ; 1.Point p = new 1.Point();
 Answer: B
+Gary: For D, l.Point is not a type.
+
 Question 47
 Given:
 10. class Line {
@@ -1017,6 +1036,8 @@ B. Line.Point p = Line.getPoint();
 C. Point p = (new Line()).getPoint();
 D. Line.Point p = (new Line()).getPoint();
 Answer: D
+
+
 Question 48
 Given:
 10. class One {
@@ -1038,6 +1059,8 @@ C. 123
 D. 321
 E. The code rims with no output.
 Answer: C
+
+
 Question 49
 Click the Exhibit button.
 11. class Person {
@@ -1062,6 +1085,9 @@ B. 0000
 C. An exception is thrown at runtime.
 D. Compilation fails because of an error in line 18.
 Answer: D
+Gary: need to call super(id) in line 18
+
+
 Question 50
 Given:
 1. public class Plant {
@@ -1084,6 +1110,8 @@ the Plant class.
 E. The code will compile if public Plant() { Plant(”fern”); } is added to
 the Plant class.
 Answer: D
+
+
 Question 51
 Click the Exhibit button.
 11. public class Bootchy {
