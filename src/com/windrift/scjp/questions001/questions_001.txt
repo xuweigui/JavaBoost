@@ -1294,7 +1294,7 @@ Question 62
 Given:
 11. public static Collection get() {
 12. Collection sorted = new LinkedList();
-13. sorted.add(’B"); sorted.add("C"); sorted.add("A");
+13. sorted.add("B"); sorted.add("C"); sorted.add("A");
 14. return sorted;
 15. }
 16. public static void main(String[] args) {
@@ -1309,6 +1309,7 @@ C. Compilation fails.
 D. The code runs with no output.
 E. An exception is thrown at runtime.
 Answer: B
+===============================================================================
 Question 63
 Given:
 11. public static void main(String[] args) {
@@ -1325,6 +1326,7 @@ D. 11
 E. Compilation fails.
 F. An exception is thrown at runtime.
 Answer: E
+===============================================================================
 Question 64
 Given:
 8. public class test {
@@ -1340,6 +1342,7 @@ D. java -ea test file1
 E. java -ea test file1 file2
 F. java -ea:test test file1
 Answer: BE
+===============================================================================
 Question 65
 Given:
 12. public class AssertStuff {
