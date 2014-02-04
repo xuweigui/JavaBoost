@@ -1408,7 +1408,7 @@ Given:
 30.
 31. private void stuff2(int y) { assert (y < 0); }
 32.
-33. private void stuff3() { assert (stuff4O); }
+33. private void stuff3() { assert (stuff4()); }
 34.
 35. private boolean stuff4() { z = 6; return false; }
 Which is true?
@@ -1422,6 +1422,7 @@ appropriately.
 G. The assert statements on lines 26, 29, and 31 are used
 appropriately.
 Answer: C
+===============================================================================
 Question 68
 Click the Exhibit button.
 SomeException:
@@ -1441,6 +1442,8 @@ B. Compilation of both classes will succeed.
 C. Compilation of class A will fail. Compilation of class B will succeed.
 D. Compilation of class B will fail. Compilation of class A will succeed.
 Answer: D
+Gary: SomeException is not throwable
+===============================================================================
 Question 69
 Click the Exhibit button.
 Class TestException
@@ -1470,6 +1473,7 @@ D. Line 46 will compile if the enclosing method throws a TestException.
 E. Line 46 will compile if enclosed in a try block, where TestException
 is caught.
 Answer: DE
+===============================================================================
 Question 70
 Given:
 33. try {
@@ -1489,6 +1493,7 @@ D. ac
 E. bc
 F. abc
 Answer: D
+===============================================================================
 Question 71
 Given:
 11.classA {
@@ -1509,6 +1514,7 @@ C. Compilation fails because of an error in line 20.
 D. Compilation fails because of an error in line 14.
 E. A NullPointerException is thrown at runtime.
 Answer: D
+===============================================================================
 Question 72
 Given:
 11.classA {
@@ -1530,6 +1536,7 @@ D. A B Exception
 E. Compilation fails because of an error in line 14.
 F. Compilation fails because of an error in line 19.
 Answer: B
+===============================================================================
 Question 73
 Given:
 11. static classA {
@@ -1550,6 +1557,8 @@ D. Compilation fails because of an error in line 15.
 E. Compilation fails because of an error in line 18.
 F. Compilation fails because of an error in line 19.
 Answer: F
+Gary: new B().process is OK, but when convert to A, need to handle the unchecked Exception
+===============================================================================
 Question 74
 Given:
 11. static class A {
@@ -1568,6 +1577,7 @@ C. Compilation fails because of an error in line 12.
 D. Compilation fails because of an error in line 15.
 E. Compilation fails because of an error in line 18.
 Answer: A
+===============================================================================
 Question 75
 Given:
 84. try {

@@ -8,9 +8,14 @@
 # intellij files #
 .idea
 *.iml
+*.ipr
+*.iws
 
 # build target folder #
 target
 
 # office documents temp files #
 ~$*
+
+# buffer files
+*~
