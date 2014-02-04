@@ -1342,6 +1342,7 @@ D. java -ea test file1
 E. java -ea test file1 file2
 F. java -ea:test test file1
 Answer: BE
+Gary: don't know why yet
 ===============================================================================
 Question 65
 Given:
@@ -1376,6 +1377,7 @@ F. passed
 An AssertionException is thrown without the word "stuff"added to the
 stack trace.
 Answer: C
+===============================================================================
 Question 66
 Click the Exhibit button.
 1. public class Test {
