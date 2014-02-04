@@ -1595,6 +1595,7 @@ B. The connection will not be retrieved in line 85.
 C. The resource connection will not be closed on line 88.
 D. The enclosing method will throw an exception to its caller.
 Answer: C
+===============================================================================
 Question 76
 Click the Exhibit button.
 1. public class A {
@@ -1631,6 +1632,7 @@ C. The code on line 5 of class A will execute.
 D. The code on line 5 of class B will execute.
 E. The exception will be propagated back to line 27.
 Answer: BE
+===============================================================================
 Question 77
 Click the Exhibit button.
 1. public class A {
@@ -1665,6 +1667,7 @@ RuntimeException.
 D. On line 5 of class A, the call to method2 of class B does not need to
 be placed in a try/catch block.
 Answer: B
+===============================================================================
 Question 78
 Given:
 11. public static void main(String[] args) {
