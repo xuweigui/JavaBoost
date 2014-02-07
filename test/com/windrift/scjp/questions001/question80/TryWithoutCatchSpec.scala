@@ -6,7 +6,7 @@ import com.windrift.test.BaseUnitSpec
  * @author Gary Xu
  */
 class TryWithoutCatchSpec extends BaseUnitSpec{
-  it should "go to finally block when no catch block" in(
+  "TryWithoutCatch" should "compile and go to finally block when exception thrown" in(
       TryWithoutCatch.test() should be ("finally")
     )
 }
