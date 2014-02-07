@@ -5,16 +5,16 @@ package com.windrift.scjp.questions001.question80;
  */
 public class TryWithoutCatch
 {
-    public static void test()
+    public static String test()
     {
         try
         {
             String test = null;
-            System.out.println(test.toString() + "");
+            return test.toString() + "";
         }
         finally
         {
-            System.out.println("finally");
+            return "finally";
         }
     }
 }

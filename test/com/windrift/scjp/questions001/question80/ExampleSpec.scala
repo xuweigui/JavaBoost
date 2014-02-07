@@ -2,8 +2,9 @@ package com.windrift.scjp.questions001.question80
 
 import collection.mutable.Stack
 import org.scalatest._
+import com.windrift.test.BaseUnitSpec
 
-class ExampleSpec extends FlatSpec with Matchers {
+class ExampleSpec extends BaseUnitSpec {
 
   "A Stack" should "pop values in last-in-first-out order" in {
     val stack = new Stack[Int]
