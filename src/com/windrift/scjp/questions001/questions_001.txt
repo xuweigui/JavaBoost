@@ -1689,6 +1689,7 @@ B. Exception
 C. Compilation fails.
 D. NullPointerException
 Answer: C
+===============================================================================
 Question 79
 Given:
 11. static void test() throws Error {
@@ -1698,7 +1699,7 @@ Given:
 15. public static void main(String[] args) {
 16. try { test(); }
 17. catch (Exception ex) { System.out.print("exception "); }
-18. System.out.print("elld ");
+18. System.out.print("end ");
 19. }
 What is the result?
 A. end
@@ -1708,6 +1709,8 @@ D. exception test end
 E. A Throwable is thrown by main.
 F. An Exception is thrown by main.
 Answer: E
+Gary: Error and Exception are subclasses of Throwable, line 17 catches Exception not Error
+===============================================================================
 Question 80
 Given:
 11. static void test() {
