@@ -43,7 +43,7 @@ public class InterviewTest{
 
     //array found at end
     @Test
-    public static void findArray5() {
+    public void findArray5() {
         int[] arr1 = {4, 9, 3, 7, 8};
         int[] arr2 = {3, 7, 8};
         if (Interview.findArray(arr1, arr2) != 2) System.out.println("findArray5 fail!");
@@ -58,7 +58,7 @@ public class InterviewTest{
 
     //more than 1 appearances found
     @Test
-    public static void findArray7() {
+    public void findArray7() {
         int[] arr1 = {4, 9, 3, 6, 9, 3, 8};
         int[] arr2 = {9, 3};
         if (Interview.findArray(arr1, arr2) != 1) System.out.println("findArray7 fail!");

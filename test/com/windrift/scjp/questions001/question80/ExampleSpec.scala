@@ -1,3 +1,5 @@
+package com.windrift.scjp.questions001.question80
+
 import collection.mutable.Stack
 import org.scalatest._
 
