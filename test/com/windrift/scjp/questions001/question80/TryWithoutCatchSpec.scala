@@ -9,4 +9,11 @@ class TryWithoutCatchSpec extends BaseUnitSpec{
   "TryWithoutCatch" should "compile and go to finally block when exception thrown" in(
       TryWithoutCatch.test() should be ("finally")
     )
+
+  "something" should "throws NPE" in (
+    intercept[NullPointerException] {
+      var s : String = null
+      s.toString()
+    }
+  )
 }
