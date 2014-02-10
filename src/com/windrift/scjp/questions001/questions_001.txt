@@ -1731,6 +1731,7 @@ C. null finally
 D. Compilation fails.
 E. finally exception
 Answer: E
+===============================================================================
 Question 81
 Given:
 11. static void test() throws RuntimeException {
@@ -1752,6 +1753,7 @@ C. test runtime end
 D. test exception end
 E. A Throwable is thrown by main at runtime.
 Answer: D
+===============================================================================
 Question 82
 Given a method that must ensue that its parameter is not null:
 11. public void someMethod(Object value) {
@@ -1768,6 +1770,7 @@ throw new AssertionException("value is null");
 D. if (value == null) {
 throw new IllegalArgumentException("value is null");
 Answer: D
+===============================================================================
 Question 83
 Click the Exhibit button.
 10. public class ClassA {
@@ -1802,6 +1805,8 @@ B. ClassC is displayed.
 C. The code runs with no output.
 D. An exception is thrown at runtime.
 Answer: D
+Gary: ClassC is not initiated in ClassB
+===============================================================================
 Question 84
 Given:
 10. public class Foo {
@@ -1816,6 +1821,8 @@ B. java.lang.IllegalStateException
 C. java.lang.ExceptionlnlnitializerError
 D. java.lang.ArraylndexOutOfBoundsException
 Answer: C
+Gary: check with the code and test case
+===============================================================================
 Question 85
 Given:
 10. public class ClassA {
@@ -1833,6 +1840,7 @@ C. NumberFormatException
 D. IllegalArgumentException
 E. ExceptionlnlnitializerError
 Answer: A
+===============================================================================
 Question 86
 Given:
 1. public class Boxer1 {
@@ -1854,6 +1862,8 @@ D. A NullPointerException occurs at runtime.
 E. A NumberFormatException occurs at runtime.
 F. An IllegalStateException occurs at runtime.
 Answer: D
+Gary: i is an Integer and not initialized, NPE thrown in line 5
+===============================================================================
 Question 87
 Given:
 1. public class TestString 1 {
@@ -1871,6 +1881,7 @@ D. 42042
 E. Compilation fails.
 F. An exception is thrown at runtime.
 Answer: D
+===============================================================================
 Question 88
 Given:
 11. class Converter {
@@ -1887,6 +1898,8 @@ B. It is false that j==i.
 C. An exception is thrown at runtime.
 D. Compilation fails because of an error in line 13.
 Answer: D
+Gary: notice the args is of type String
+===============================================================================
 Question 89
 Given this method in a class:
 21. public String toString() {
@@ -1905,10 +1918,11 @@ StringBuilder will not enhance the performance.
 D. This code will perform poorly. For better performance, the code
 should be rewritten: return "<"+ this.name + ">";
 Answer: B
+===============================================================================
 Question 90
 Given:
 1. public class MyLogger {
-2. private StringBuilder logger = new StringBuuilder();
+2. private StringBuilder logger = new StringBuilder();
 3. public void log(String message, String user) {
 4. logger.append(message);
 5. logger.append(user);
@@ -1924,9 +1938,12 @@ thread-safe.
 D. replace StringBuilder with just a String object and use the string
 concatenation (+=) within the log method
 Answer: A
+Gary: replace with StringBuilder won't resolve the synchronization issue when thread1 append message, thread2 append message, thread1 append user, thread2 append user
+the log will end up with "message1, message2, user1, user2" which should be "message1, user1, message2, user2"
+===============================================================================
 Question 91
 Given:
-11. public String makinStrings() {
+11. public String makingStrings() {
 12. String s = "Fred";
 13. s = s + "47";
 14. s = s.substring(2, 5);
@@ -1941,6 +1958,8 @@ D. 4
 E. 5
 F. 6
 Answer: C
+Gary: ??? s.toString() is not creating a new String, it should be 4 to me.
+===============================================================================
 Question 92
 Given:
 1. public class TestString3 {
@@ -1962,6 +1981,8 @@ s.substring(3,6).delete( 1 ,2).insert( 1, "24");
 E. StringBuilder s = new StringBuilder("123456789");
 s.delete(0,3).delete( 1 ,3).delete(2,5).insert( 1, "24");
 Answer: BE
+Gary: StringBuilder.delete is not throwing Exception when the second param is greater than the String length
+===============================================================================
 Question 93
 Given:
 11. public class Yikes {
