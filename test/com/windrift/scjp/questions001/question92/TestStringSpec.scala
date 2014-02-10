@@ -11,7 +11,11 @@ class TestStringSpec extends BaseUnitSpec {
     )
 
   "StringBuilder.delete" should "not throw exception when the second param is grater than the string length" in (
-    assert(TestString.deleteFromStringBuilder().length > 0)
+     try {
+       TestString.deleteFromStringBuilder()
+     } catch {
+       case e : Exception => fail("an Exception caught", e)
+     }
     )
 
 }
