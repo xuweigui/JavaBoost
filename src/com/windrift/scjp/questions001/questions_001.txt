@@ -2003,6 +2003,13 @@ B. Short Long
 C. Compilation fails.
 D. An exception is thrown at runtime.
 Answer: A
+
+Gary:
+Since there is no method go(short s) to choose, Java has to choose another one. This can be done in two ways:
+    1. Widening, widening the short to an int
+    2. Autoboxing, surrounding the short with a Short, the corresponding wrapper class.
+Since widening has been around longer than autoboxing (introduced in Java 5), the JVM chooses this alternative first if available.
+Therefore, the go(int n) method is invoked.
 ===============================================================================
 Question 94
 Given:
@@ -2023,6 +2030,8 @@ B. SHORT LONG
 C. Compilation fails.
 D. An exception is thrown at runtime.
 Answer: C
+Gary: int cannot automatically widen to long
+===============================================================================
 Question 95
 Given:
 10. class MakeFile {
@@ -2050,6 +2059,7 @@ file system.
 G. Line 14 creates a file named ‘f’ inside of the directory named "d" in
 the file system.
 Answer: BCD
+===============================================================================
 Question 96
 When comparing java.io.BufferedWriter to java.io.FileWriter, which
 capability exists as a method in only one of the two?
@@ -2059,6 +2069,8 @@ C. writing to the stream
 D. marking a location in the stream
 E. writing a line separator to the stream
 Answer: E
+Gary: ???
+===============================================================================
 Question 97
 Given:
 12. import java.io.*;
@@ -2080,6 +2092,8 @@ B. An exception is thrown at runtime.
 C. An instance of Forest is serialized.
 D. A instance of Forest and an instance of Tree are both serialized.
 Answer: B
+Gary: Tree is not serializable
+===============================================================================
 Question 98
 Click the Exhibit button.
 1. import java.io.*;
@@ -2106,6 +2120,8 @@ B. this = s.defaultReadObject();
 C. y = s.readInt(); x = s.readInt();
 D. x = s.readInt(); y = s.readInt();
 Answer: D
+Gary: guess the sequence of readObject should be same as writeObject
+===============================================================================
 Question 99
 Which three concerning the use of the java.io.Serializable interface are
 true? (Choose three.)
@@ -2119,6 +2135,18 @@ serialization and deserialization.
 E. It is legal to serialize an object of a type that has a supertype that
 does NOT implement java.io.Serializable.
 Answer: BDE
+Gary: The transient modifier tells the Java object serialization subsystem to exclude the field when serializing an instance of the class.
+When the object is then deserialized, the field will be initialized to the default value; i.e. null for a reference type,
+and zero or false for a primitive type. Note that the JLS (see 8.3.1.3) does not say what transient means,
+ but defers to the Java Object Serialization Specification. Other non-standard serialization mechanisms may also pay attention to a field's transient-ness.
+
+The volatile modifier tells the JVM that writes to the field should always be synchronously flushed to memory,
+and that reads of the field should always read from memory. This means that fields marked as volatile can be safely
+ accessed and updated in a multi-thread application without using native or standard library-based synchronization.
+ (This does not apply to long or double fields, which may be non-atomic on some JVMs. However,
+ it always applies to reference-typed fields.) The relevant parts of the JLS are 8.3.1.4, 17.4 and 17.7.
+
+===============================================================================
 Question 100
 Assuming that the serializeBanana() and the deserializeBanana()
 methods will correctly use Java serialization and given:
@@ -2142,6 +2170,7 @@ C. restore 453
 D. Compilation fails.
 E. An exception is thrown at runtime.
 Answer: C
+===============================================================================
 Question 101
 Assuming that the serializeBanana2() and the deserializeBanana2()
 methods will correctly use Java serialization and given:
