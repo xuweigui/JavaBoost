@@ -2003,6 +2003,7 @@ B. Short Long
 C. Compilation fails.
 D. An exception is thrown at runtime.
 Answer: A
+===============================================================================
 Question 94
 Given:
 12. public class Wow {
