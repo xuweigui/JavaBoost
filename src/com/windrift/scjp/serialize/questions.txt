@@ -1,0 +1,144 @@
+Question 1
+Given:
+12. import java.io.*;
+13. public class Forest implements Serializable {
+14. private Tree tree = new Tree();
+15. public static void main(String [] args) {
+16. Forest f= new Forest();
+17. try {
+18. FileOutputStream fs = new FileOutputStream("Forest.ser");
+19. ObjectOutputStream os = new ObjectOutputStream(fs);
+20. os.writeObject(f); os.close();
+21. } catch (Exception ex) { ex.printStackTrace(); }
+22. } }
+23.
+24. class Tree { }
+What is the result?
+A. Compilation fails.
+B. An exception is thrown at runtime.
+C. An instance of Forest is serialized.
+D. A instance of Forest and an instance of Tree are both serialized.
+Answer: B
+Gary: Tree is not serializable
+===============================================================================
+Question 2
+Click the Exhibit button.
+1. import java.io.*;
+2. public class Foo implements Serializable {
+3. public int x, y;
+4. public Foo( int x, int y) { this.x = x; this.y = y; }
+5.
+6. private void writeObject( ObjectOutputStream s)
+7. throws IOException {
+8. s.writeInt(x); s.writeInt(y)
+9. }
+10.
+11. private void readObject( ObjectInputStream s)
+12. throws IOException, ClassNotFoundException {
+13.
+14. // insert code here
+15.
+16. }
+17. }
+Which code, inserted at line 14, will allow this class to correctly
+serialize and deserialize?
+A. s.defaultReadObject();
+B. this = s.defaultReadObject();
+C. y = s.readInt(); x = s.readInt();
+D. x = s.readInt(); y = s.readInt();
+Answer: D
+Gary: guess the sequence of readObject should be same as writeObject
+===============================================================================
+Question 3
+Which three concerning the use of the java.io.Serializable interface are
+true? (Choose three.)
+A. Objects from classes that use aggregation cannot be serialized.
+B. Art object serialized on one JVM can be successfully deserialized on
+a different JVM.
+C. The values in fields with the volatile modifier will NOT survive
+serialization and deserialization.
+D. The values in fields with the transient modifier will NOT survive
+serialization and deserialization.
+E. It is legal to serialize an object of a type that has a supertype that
+does NOT implement java.io.Serializable.
+Answer: BDE
+Gary: The transient modifier tells the Java object serialization subsystem to exclude the field when serializing an instance of the class.
+When the object is then deserialized, the field will be initialized to the default value; i.e. null for a reference type,
+and zero or false for a primitive type. Note that the JLS (see 8.3.1.3) does not say what transient means,
+ but defers to the Java Object Serialization Specification. Other non-standard serialization mechanisms may also pay attention to a field's transient-ness.
+
+The volatile modifier tells the JVM that writes to the field should always be synchronously flushed to memory,
+and that reads of the field should always read from memory. This means that fields marked as volatile can be safely
+ accessed and updated in a multi-thread application without using native or standard library-based synchronization.
+ (This does not apply to long or double fields, which may be non-atomic on some JVMs. However,
+ it always applies to reference-typed fields.) The relevant parts of the JLS are 8.3.1.4, 17.4 and 17.7.
+
+===============================================================================
+Question 4
+Assuming that the serializeBanana() and the deserializeBanana()
+methods will correctly use Java serialization and given:
+13. import java.io.*;
+14. class Food implemertts Serializable {int good = 3;}
+15. class Fruit externds Food {int juice = 5;}
+16. public class Banana extends Fruit {
+17. int yellow = 4;
+18. public static void main(String [] args) {
+19. Banana b = new Banana(); Banana b2 = new Banana();
+20. b.serializeBanana(b); // assume correct serialization
+21. b2 = b.deserializeBanana(); // assume correct
+22. System.out.println("restore "+b2.yellow+ b2.juice+b2.good);
+24. }
+25. // more Banana methods go here
+50. }
+‘What is the result?
+A. restore 400
+B. restore 403
+C. restore 453
+D. Compilation fails.
+E. An exception is thrown at runtime.
+Answer: C
+===============================================================================
+Question 5
+Assuming that the serializeBanana2() and the deserializeBanana2()
+methods will correctly use Java serialization and given:
+13. import java.io.*;
+14. class Food {Food() { System.out.print("1"); } }
+15. class Fruit extends Food implements Serializable {
+16. Fruit() { System.out.print("2"); } }
+17. public class Banana2 extends Fruit { int size = 42;
+18. public static void main(String [] args) {
+19. Banana2 b = new Banana2();
+20. b.serializeBanana2(b); // assume correct serialization
+21. b = b.deserializeBanana2(b); // assume correct
+22. System.out.println(" restored "+ b.size + " "); }
+23. // more Banana2 methods
+24. }
+What is the result?
+A. Compilation fails.
+B. 1 restored 42
+C. 12 restored 42
+D. 121 restored 42
+E. 1212 restored 42
+F. An exception is thrown at runtime.
+Answer: D
+Gary: Food does not implement Serializable, thus the Construction method was called during deserialization
+===============================================================================
+Question 6
+Given:
+10. public class Foo implements java.io.Serializable {
+11. private int x;
+12. public int getX() { return x; }
+12.public Foo(int x){this.x=x; }
+13. private void writeObject( ObjectOutputStream s)
+14. throws IOException {
+15. // insert code here
+16. }
+17. }
+Which code fragment, inserted at line 15, will allow Foo objects to be
+correctly serialized and deserialized?
+A. s.writeInt(x);
+B. s.serialize(x);
+C. s.writeObject(x);
+D. s.defaultWriteObject();
+Answer: D
+Gary: need more learning
