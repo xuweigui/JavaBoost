@@ -1,0 +1,102 @@
+Question 1
+Given:
+12. NumberFormat nf= NumberFormat.getInstance();
+13. nf.setMaximumFractionDigits(4);
+14. nf.setMinimumFractionDigits(2);
+15. String a = nf.format(3.1415926);
+16. String b = nf.format(2);
+Which two are true about the result if the default locale is Locale.US?
+(Choose two.)
+A. The value of b is 2.
+B. The value of a is 3.14.
+C. The value of b is 2.00.
+D. The value of a is 3.141.
+E. The value of a is 3.1415.
+F. The value of a is 3.1416.
+G. The value of b is 2.0000.
+Answer: CF
+===============================================================================
+Question 2
+Given:
+11. double input = 314159.26;
+12. NumberFormat nf= NumberFormat.getInstance(Locale.ITALIAN);
+13. String b;
+14. //insert code here
+Which code, inserted at line 14, sets the value of b to 3 14.159,26?
+A. b = nf.parse( input);
+B. b = nf.format( input);
+C. b = nf.equals( input);
+D. b = nf.parseObject( input);
+Answer: B
+===============================================================================
+Question 3
+Given:
+14. DateFormat df;
+15. Date date = new Date();
+16. //insert code here
+17. String s = df.format( date);
+Which two, inserted independently at line 16, allow the code to
+compile? (Choose two.)
+A. df= new DateFormat();
+B. df= Date.getFormatter();
+C. df= date.getFormatter();
+D. df= date.getDateFormatter();
+E. df= Date.getDateFormatter();
+F. df= DateFormat.getInstance();
+G. df = DateFormat.getDateInstance();
+Answer: FG
+===============================================================================
+Question 4
+Given:
+12. Date date = new Date();
+13. df.setLocale(Locale.ITALY);
+14. String s = df.format(date);
+The variable df is an object of type DateFormat that has been
+initialized in line 11. What is the result if this code is run on December
+14, 2000?
+A. The value of s is 14-dic-2004.
+B. The value of s is Dec 14, 2000.
+C. An exception is thrown at runtime.
+D. Compilation fails because of an error in line 13.
+Answer: D
+Gary: no setLocale method in DateFormat
+===============================================================================
+Question 5
+Given:
+33. Date d = new Date(0);
+34. String ds = "December 15, 2004";
+35. // insert code here
+36. try {
+37. d = df.parse(ds);
+38. }
+39. catch(ParseException e) {
+40. System.out.println("Unable to parse "+ ds);
+41. }
+42. // insert code here too
+Which will create the appropriate DateFormat object and add a day to
+the Date object?
+A. 35. DateFormat df= DateFormat.getDateFormat();
+42. d.setTime( (60 * 60 * 24) + d.getTime());
+B. 35. DateFormat df= DateFormat.getDateJnstance();
+42. d.setTime( (1000 * 60 * 60 * 24) + d.getTime());
+C. 35. DateFormat df= DateFormat.getDateFormat();
+42. d.setLocalTime( (1000*60*60*24) + d.getLocalTime());
+D. 35. DateFormat df= DateFormat.getDateJnstance();
+42. d.setLocalTime( (60 * 60 * 24) + d.getLocalTime());
+Answer: B
+===============================================================================
+Question 6
+Given a valid DateFormat object named df, and
+16. Date d = new Date(0L);
+17. String ds = "December 15, 2004";
+18. // insert code here
+What updates d’s value with the date represented by ds?
+A. 18. d = df.parse(ds);
+B. 18. d = df.getDate(ds);
+C. 18. try {
+19. d = df.parse(ds);
+20. } catch(ParseException e) { };
+D. 18. try {
+19. d = df.getDate(ds);
+20. } catch(ParseException e) { };
+Answer: C
