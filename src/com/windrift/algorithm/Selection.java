@@ -1,14 +1,5 @@
 package com.windrift.algorithm;
 
-import java.awt.datatransfer.StringSelection;
-
-/**
- * Created by IntelliJ IDEA.
- * User: cy
- * Date: 11/07/12
- * Time: 10:20 PM
- * To change this template use File | Settings | File Templates.
- */
 public class Selection {
      /**
      * find the Kth biggest number in the n numbers

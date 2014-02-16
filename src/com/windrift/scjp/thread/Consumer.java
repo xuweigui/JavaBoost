@@ -1,12 +1,5 @@
 package com.windrift.scjp.thread;
 
-/**
- * Created by IntelliJ IDEA.
- * User: cy
- * Date: 11/06/12
- * Time: 7:45 PM
- * To change this template use File | Settings | File Templates.
- */
 public class Consumer extends Thread
 {
     private MyStack stack;
