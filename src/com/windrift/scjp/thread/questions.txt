@@ -260,7 +260,7 @@ Answer: G
 Gary: interrupt() method set the interrupted flag to true, then the sleep() on line 36 or wait()
 will consume the interrupted flag, and throw the InterruptedException exception
 ===============================================================================
-Question 125
+Question 10
 Given:
 public class NamedCounter {
 private final String name;
@@ -279,14 +279,15 @@ C. declare getCount() using the synchronized keyword
 D. declare the constructor using the synchronized keyword
 E. declare increment() using the synchronized keyword
 Answer: ACE
-Question 125
+===============================================================================
+Question 11
 Click the Exhibit button:
-1. public class Threads 1 {
-2. intx=0;
+1. public class Threads1 {
+2. int x=0;
 3. public class Runner implements Runnable {
 4. public void run() {
 5. int current = 0;
-6. for(int=i=0;i<4;i++){
+6. for(int i=0;i<4;i++){
 7. current = x;
 8. System.out.print(current + ", ");
 9. x = current + 2;
@@ -311,7 +312,8 @@ C. 0, 2, 4, 6, 8, 10, 12, 14,
 D. 0, 0, 2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12, 14, 14,
 E. 0, 2, 4, 6, 8, 10, 12, 14, 0, 2, 4, 6, 8, 10, 12, 14,
 Answer: AC
-Question 126
+===============================================================================
+Question 12
 Click the Exhibit button.
 1. import java.util.*;
 2.
@@ -327,7 +329,7 @@ Click the Exhibit button.
 12. final NameList sl = new NameList();
 13.for(int i=0;i<2;i++) {
 14. new Thread() {
-15. public void ruin() {
+15. public void run() {
 16. sl.add("A");
 17. sl.add("B");
 18. sl.add("C");
@@ -347,7 +349,8 @@ E. The code may rum with output "A B C A B C A B C ", then exit.
 F. The code may ruin with output "A A A B C A B C C ", then exit.
 G. The code may ruin with output "A B C A A B C A B C ", then exit.
 Answer: EG
-Question 127
+===============================================================================
+Question 13
 Given:
 1. public class TestFive {
 2. private int x;
@@ -373,8 +376,9 @@ block.
 E. Wrap the for loop code inside the go() method with a synchronized
 block synchronized(this) { // for loop code here }.
 Answer: AD
-Question 128
-Which three will compile and rim without exception? (Choose three.)
+===============================================================================
+Question 14
+Which three will compile and run without exception? (Choose three.)
 A. private synchronized Object o;
 B. void go() {
 synchronized() { /* code here */ }
@@ -389,7 +393,8 @@ Object o = new Object();
 synchronized(o) { /* code here */ }
 }
 Answer: CEF
-Question 129
+===============================================================================
+Question 15
 Given:
 1. public class TestSeven extends Thread {
 2. private static int x;
@@ -413,7 +418,8 @@ thread-safe.
 F. Wrapping the statements within doThings() in a synchronized(new
 Object()) { } block would make the class thread-safe.
 Answer: E
-Question 130
+===============================================================================
+Question 16
 Click the Exhibit button.
 10. public class Transfers {
 11. public static void main(String[] args) throws Exception {
@@ -459,7 +465,8 @@ E. The code may deadlock (without completing) with no output.
 F. M IllegalStateException or InterruptedException may be thrown at
 runtime.
 Answer: ABE
-Question 131
+===============================================================================
+Question 17
 Click the Exhibit button.
 1. class Computation extends Thread {
 2.
