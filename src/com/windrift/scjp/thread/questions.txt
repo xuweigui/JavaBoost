@@ -465,6 +465,8 @@ E. The code may deadlock (without completing) with no output.
 F. M IllegalStateException or InterruptedException may be thrown at
 runtime.
 Answer: ABE
+Gary: the output would be A if print is run after 3 transfers, the output would be B if print happened after 1st transfer
+Why the main thread can be affected by the deadlock thus no output????
 ===============================================================================
 Question 17
 Click the Exhibit button.
@@ -509,7 +511,8 @@ D. The code may run with output "0 6".
 E. The code may run with output "2 0 6 4’.
 F. The code may ruin with output "0 2 4 6".
 Answer: F
-Question 132
+===============================================================================
+Question 18
 Given:
 7. void waitForSignal() {
 8. Object obj = new Object();
@@ -529,7 +532,11 @@ method to complete normally.
 F. A call to notify() or notifyAll() from another thread may cause this
 method to complete normally.
 Answer: B
-Question 133
+Gary: not compiled because un-checked InterruptedException
+if InterruptedException checked, IllegalMonitorStateException will be thrown since the current thread is not
+ the owner of the object's monitor when calling wait().
+===============================================================================
+Question 19
 Given:
 foo and bar are public references available to many other threads. foo
 refers to a Thread and bar is an Object. The thread foo is currently
@@ -542,7 +549,8 @@ D. Thread.notify();
 E. bar.notiFYAll();
 F. Object.notify();
 Answer: E
-Question 134
+===============================================================================
+Question 20
 Which two are true? (Choose two.)
 A. An encapsulated, public class promotes re-use.
 B. Classes that share the same interface are always tightly
