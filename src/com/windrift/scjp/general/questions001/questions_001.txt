@@ -2145,7 +2145,32 @@ D. An exception is thrown at runtime.
 Answer: D
 Gary： next is a String
 ===============================================================================
-Questions 113 to 135 moved to thread
+Questions 113 to 133 moved to thread
+===============================================================================
+Question 134
+Which two are true? (Choose two.)
+A. An encapsulated, public class promotes re-use.
+B. Classes that share the same interface are always tightly
+encapsulated.
+C. An encapsulated class allows subclasses to overload methods, but
+does NOT allow overriding methods.
+D. An encapsulated class allows a programmer to change an
+implementation without affecting outside code.
+Answer: AD
+===============================================================================
+Question 135
+Given:
+1. package test;
+2.
+3. class Target {
+4. public String name = "hello";
+5. }
+What can directly access and change the value of the variable name?
+A. any class
+B. only the Target class
+C. any class in the test package
+D. any class that extends Target
+Answer: C
 ===============================================================================
 Question 136
 Given:
