@@ -1,4 +1,4 @@
-package com.windrift.scjp.thread;
+package com.windrift.scjp.concurrency;
 
 /**
  * Created by IntelliJ IDEA.

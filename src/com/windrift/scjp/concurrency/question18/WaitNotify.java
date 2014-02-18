@@ -1,4 +1,4 @@
-package com.windrift.scjp.thread.question18;
+package com.windrift.scjp.concurrency.question18;
 
 /**
  * @author Gary Xu

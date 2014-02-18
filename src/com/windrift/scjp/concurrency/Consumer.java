@@ -1,4 +1,4 @@
-package com.windrift.scjp.thread;
+package com.windrift.scjp.concurrency;
 
 public class Consumer extends Thread
 {

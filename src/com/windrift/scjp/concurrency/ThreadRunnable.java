@@ -1,4 +1,4 @@
-package com.windrift.scjp.thread;
+package com.windrift.scjp.concurrency;
 
 /**
  * Created by IntelliJ IDEA.
@@ -83,7 +83,7 @@ Thus on execution of myThread.start() statement, the start() method of the MyThr
 executed and as a result MyThread:start() will be printed. Had the start() method not there in
  MyThread class, the start() method of the Thread class would be called which in turn would call
  the run() method of the MyThread class.
-On execution of thread.start();, the start() method of the Thread class would be called which in
+On execution of concurrency.start();, the start() method of the Thread class would be called which in
 turn will call the run() method of the class which is passed to Thread constructor (i.e. MyRunnable class).
 Thus MyRunnable:run() will be printed out.
 */
