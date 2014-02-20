@@ -1,20 +1,25 @@
-package com.windrift.other;
+package com.windrift.java.generics_collections;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashSet;
-import java.util.Set;
 
 
+/**
+ * Collection.toArray() returns Object[]
+ * Collection.toArray(T[]) returns T[]
+ */
 public class ClassCastExceptionOnToArray
 {
     public static void main(String[] args)
     {
-        Set<String> set = new HashSet<>();
+        Collection<String> set = new HashSet<>();
         String[] strArray = new String[]{"a", "b"};
         set.addAll(Arrays.asList(strArray));
 
         test(set.toArray(new String[set.size()])); //ok
-        test((String[])set.toArray()); // ClassCastException
+        test(set.toArray(new String[1])); //ok
+        test((String[])set.toArray()); // ClassCastException: [Ljava.lang.Object; cannot be cast to [Ljava.lang.String;
 
     }
 

@@ -2192,6 +2192,7 @@ B. Line 2 of class Target can be changed to private int i = 1;
 C. Line 3 of class Target can be changed to private int addOne() {
 D. Line 2 of class Target can be changed to private Integer i = 0;
 Answer: D
+===============================================================================
 Question 137
 Given:
 1. package geometry;
@@ -2209,6 +2210,8 @@ B. No class has access to base.
 C. The class must belong to the geometry package.
 D. The class must be a subclass of the class Hypotenuse.
 Answer: C
+Gary: because InnerTriangle is package visible
+===============================================================================
 Question 138
 Given:
 11. class ClassA {}
@@ -2228,6 +2231,7 @@ D. p2 = (ClassC)p1;
 E. p1 = (ClassB)p3;
 F. p2 = (ClassC)p4;
 Answer: AEF
+===============================================================================
 Question 139
 Given:
 11. class Animal { public String noise() { return "peep"; } }
@@ -2248,6 +2252,7 @@ C. meow
 D. Compilation fails.
 E. An exception is thrown at runtime.
 Answer: E
+===============================================================================
 Question 140
 Given:
 11. abstract class Vehicle { public int speed() { return 0; } }
@@ -2266,6 +2271,7 @@ C. Compilation fails.
 D. 150, 150, 150
 E. An exception is thrown at runtime.
 Answer: D
+===============================================================================
 Question 141
 Given:
 10. abstract class A {
@@ -2288,10 +2294,11 @@ D. z.a1();
 E. y.c1();
 F. x.a1();
 Answer: ABDF
+===============================================================================
 Question 142
 Given:
 10. interface A { void x(); }
-11. class B implements A { public void x() { } public voidy() { } }
+11. class B implements A { public void x() { } public void y() { } }
 12. class C extends B { public void x() {} }
 And:
 20. java.util.List<A> list = new java.util.ArrayList<A>();
@@ -2309,6 +2316,7 @@ D. Compilation fails because of an error in line 21.
 E. Compilation fails because of an error in line 23.
 F. Compilation fails because of an error in line 25.
 Answer: F
+===============================================================================
 Question 143
 Given:
 1. class SuperClass {
@@ -2327,6 +2335,8 @@ B. Compilation will succeed if B extends A.
 C. Compilation will always fail because of an error in line 7.
 D. Compilation will always fail because of an error in line 8.
 Answer: B
+Gary: need to pay attention
+===============================================================================
 Question 144
 Given:
 1. interface A { public void aMethod(); }
@@ -2351,6 +2361,7 @@ version of bMethod() defined in Line 5.
 F. If you define D e = (D)(new E()), then e.bMethod() invokes the
 version of bMethod() defined in Line 9.
 Answer: F
+===============================================================================
 Question 145
 Given:
 10. interface A { public int getValue() }
@@ -2368,6 +2379,7 @@ C. public void add(A a) { a.getValue(); }
 D. public void add(A a, B b) { a.getValue(); }
 E. public void add(C c1, C c2) { c1.getValue(); }
 Answer: BCD
+===============================================================================
 Question 146
 Given:
 1. class ClassA {

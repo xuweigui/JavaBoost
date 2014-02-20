@@ -1,12 +1,6 @@
-package com.windrift.java;
+package com.windrift.java.general;
 
-/**
- * Created with IntelliJ IDEA.
- * User: cy
- * Date: 23/12/12
- * Time: 5:51 PM
- * To change this template use File | Settings | File Templates.
- */
+
 class ArrayDeclaration
 {
     //in array declaration we have to give either size or initialization elements but not both
