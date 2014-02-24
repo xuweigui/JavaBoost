@@ -121,4 +121,340 @@ swift retrieval.
 Answer: CE
 Gary: AC-hashcode not equal that the object not equal, hashcode equal still need to confirm the equals() method to test equality
 ===============================================================================
+Question 7
+Click the Exhibit button.
+1. import java.util.*;
+2. class KeyMaster {
+3. public int i;
+4. public KeyMaster(int i) { this.i = i; }
+5. public boolean equals(Object o) { return i == ((KeyMaster)o).i; }
+6. public int hashCode() { return i; }
+7. }
+8. public class MapIt {
+9. public static void main(String[] args) {
+10. Set<KeyMaster> set = new HashSet<KeyMaster>();
+11. KeyMaster k1 = new KeyMaster(1);
+12. KeyMaster k2 = new KeyMaster(2);
+13. set.add(k1); set.add(k1);
+14. set.add(k2); set.add(k2);
+15. System.out.print(set.size() + ":");
+16. k2.i = 1;
+17. System.out.print(set.size() + ":");
+18. set.remove(k1);
+19. System.out.print(set.size() + ":");
+20. set.remove(k2);
+21. System.out.print(set.size());
+22. }
+23. }
+What is the result?
+A. 4:4:2:2
+B. 4:4:3:2
+C. 2:2:1:0
+D. 2:2:0:0
+E. 2:1:0:0
+F. 2:2:1:1
+G. 4:3:2:1
+Answer: F
+===============================================================================
+Question 8
+Given:
+1. import java.util.*;
+2. public class Test {
+3. public static void main(String[] args) {
+4. List<String> strings = new ArrayList<String>();
+5. // insert code here
+6. }
+7. }
+Which four, inserted at line 5, will allow compilation to succeed?
+(Choose four.)
+A. String s = strings.get(0);
+B. Iterator i1 = strings.iterator();
+C. String[] array1 = strings.toArray();
+D. Iterator<String> i2 = strings.iterator();
+E. String[] array2 = strings.toArray(new String[1]);
+F. Iterator<String> i3 = strings.iterator<String>();
+Answer: ABDE
+===============================================================================
+Question 9
+Given:
+1. import java.util.*;
+2. public class Old {
+3. public static Object get()(List list) {
+4. return list.get(0);
+5. }
+6. }
+Which three will compile successfully? (Choose three.)
+A. Object o = Old.get0(new LinkedList());
+B. Object o = Old.get0(new LinkedList<?>());
+C. String s = Old.getfl(new LinkedList<String>());
+D. Object o = Old.get0(new LinkedList<Object>());
+E. String s = (String)Old.get0(new LinkedList<String>());
+Answer: ADE
+===============================================================================
+Question 10
+Given:
+11. public static void append(List list) { list.add("0042"); }
+12. public static void main(String[] args) {
+13. List<Integer> intList = new ArrayList<Integer>();
+14. append(intList);
+15. System.out.println(intList.get(0));
+16. }
+‘What is the result?
+A. 42
+B. 0042
+C. An exception is thrown at runtime.
+D. Compilation fails because of an error in line 13.
+E. Compilation fails because of an error in line 14.
+Answer: B
+Gary: check out the MissMatch class
+===============================================================================
 
+Question 178
+Given a pre-generics implementation of a method:
+11. public static int sum(List list) {
+12. int sum = 0;
+13. for ( Iterator iter = list.iterator(); iter.hasNext(); ) {
+14. int i = ((Integer)iter.next()).intValue();
+15. sum += i;
+16. }
+17. return sum;
+18. }
+Which three changes must be made to the method sum to use
+generics? (Choose three.)
+A. remove line 14
+B. replace line 14 with "int i = iter.next();"
+C. replace line 13 with "for (int i : intList) {"
+D. replace line 13 with "for (Iterator iter : intList) {"
+E. replace the method declaration with "sum(List<int> intList)"
+F. replace the method declaration with "sum(List<Integer> intList)"
+Answer: ACF
+Question 179
+Given:
+classA {}
+class B extends A {}
+class C extends A {}
+class D extends B {}
+Which three statements are true? (Choose three.)
+A. The type List<A> is assignable to List.
+B. The type List<B> is assignable to List<A>.
+C. The type List<Object> is assignable to List<?>.
+D. The type List<D> is assignable to List<? extends B>.
+E. The type List<? extends A> is assignable to List<A>.
+F. The type List<Object> is assignable to any List reference.
+G. The type List<? extends B> is assignable to List<? extends A>.
+Answer: CDG
+Question 180
+Given:
+11. public void addStrings(List list) {
+12. list.add("foo");
+13. list.add("bar");
+14. }
+What must you change in this method to compile without warnings?
+A. add this code after line 11:
+list = (List<String>) list;
+B. change lines 12 and 13 to:
+list.add<String>("foo");
+list.add<String>("bar");
+C. change the method signature on line 11 to:
+public void addStrings(List<? extends String> list) {
+D. change the method signature on line 11 to:
+public void addStrings(List<? super String> list) {
+E. No changes are necessary. This method compiles without warnings.
+Answer: D
+Question 181
+Given:
+1. public class Test {
+2. public <T extends Comparable> T findLarger(T x, T y) {
+3. if(x.compareTo(y) > 0) {
+4. return x;
+5. } else {
+6. return y;
+7. }
+8. }
+9. }
+and:
+22. Test t = new Test();
+23. // insert code here
+Which two will compile without errors when inserted at line 23?
+(Choose two.)
+A. Object x = t.findLarger(123, "456");
+B. int x = t.findLarger(123, new Double(456));
+C. int x = t.findLarger(123, new Integer(456));
+D. int x = (int) t.findLarger(new Double(123), new Double(456));
+Answer: AC
+Question 182
+Given:
+11. // insert code here
+12. private N min, max;
+13. public N getMin() { return min; }
+14. public N getMax() { return max; }
+15. public void add(N added) {
+16. if (min == null || added.doubleValue() <min.doubleValue())
+17. min = added;
+18. if (max == null ||added.doubleValue() > max.doubleValue())
+19. max = added;
+20. }
+21. }
+Which two, inserted at line 11, will allow the code to compile? (Choose
+two.)
+A. public class MinMax<?> {
+B. public class MinMax<? extends Number> {
+C. public class MinMax<N extends Object> {
+D. public class MinMax<N extends Number> {
+E. public class MinMax<? extends Object> {
+F. public class MinMax<N extends Integer> {
+Answer: DF
+Question 183
+A programmer must create a generic class MinMax and the type
+parameter of MinMax must implement Comparable. Which
+implementation of MinMax will compile?
+A. class MinMax<E extends Comparable<E>> {
+E min=null;
+E max=null;
+public MinMax() { }
+public void put(E value) { /* store min or max */ }
+}
+B. class MinMax<E implements Comparable<E>> {
+E min=null;
+E max=null;
+public MinMax() { }
+public void put(E value) { /* store min or max */ }
+}
+C. class MinMax<E extends Comparable<E>> {
+<E> E min = null;
+<E> E max = null;
+public MinMax() { }
+public <E> void put(E value) { /* store min or max */ }
+}
+D. class MinMax<E implements Comparable<E>> {
+<E> E min = null;
+<E> E max = null;
+public MinMax() { }
+public <E> void put(E value) { /* store min or max */ }
+}
+Answer: A
+Question 184
+Given:
+1. public class Drink implements Comparable {
+2. public String name;
+3. public int compareTo(Object o) {
+4. return 0;
+5. }
+6. }
+and:
+20. Drink one = new Drink();
+21. Drink two = new Drink();
+22. one.name= "Coffee";
+23. two.name= "Tea";
+23. TreeSet set = new TreeSet();
+24. set.add(one);
+25. set.add(two);
+A programmer iterates over the TreeSet and prints the name of each
+Drink object.
+What is the result?
+A. Tea
+B. Coffee
+C. Coffee
+Tea
+D. Compilation fails.
+E. The code runs with no output.
+F. An exception is thrown at runtime.
+Answer: B
+Question 185
+Given:
+11. List list = // more code here
+12. Collections.sort(list, new MyComparator());
+Which code will sort this list in the opposite order of the sort in line
+12?
+A. Collections.reverseSort(list, new MyComparator());
+B. Collections.sort(list, new MyComparator());
+list.reverse();
+C. Collections.sort(list, new InverseComparator(
+new MyComparator()));
+D. Collections.sort(list, Collections.reverseOrder(
+new MyComparator()));
+Answer: D
+Question 186
+Given:
+int[] myArray=newint[] {1, 2,3,4, 5};
+What allows you to create a list from this array?
+A. List myList = myArray.asList();
+B. List myList = Arrays.asList(myArray);
+C. List myList = new ArrayList(myArray);
+D. List myList = Collections.fromArray(myArray);
+Answer: B
+Question 187
+Given:
+13. public static void search(List<String> list) {
+14. list.clear();
+15. list.add("b");
+16. list.add("a");
+17. list.add("c");
+18. System.out.println(Collections.binarySearch(list, "a"));
+19. }
+What is the result of calling search with a valid List implementation?
+A. 0
+B. 1
+C. 2
+D. a
+E. b
+F. c
+G. The result is undefined.
+Answer: G
+Question 188
+Given:
+1. import java.util.*;
+2.
+3. public class LetterASort {
+4. public static void main(String[] args) {
+5. ArrayList<String> strings = new ArrayList<String>();
+6. strings.add(’aAaA");
+7. strings.add("AaA");
+8. strings.add(’aAa");
+9. strings.add("AAaa");
+10. Collections.sort(strings);
+11. for (String s: strings) { System.out.print(s + " "); }
+12. }
+13. }
+What is the result?
+A. Compilation fails.
+B. aAaA aAa AAaa AaA
+C. AAaa AaA aAa aAaA
+D. AaA AAaa aAaA aAa
+E. aAa AaA aAaA AAaa
+F. An exception is thrown at runtime.
+Answer: C
+Question 189
+Given:
+ArrayList a = new ArrayList();
+containing the values {"1", "2", "3", "4", "5", "6", "7", "8"}
+Which code will return 2?
+A. Collections. sort(a, a.reverse());
+int result = Collections.binarySearch(a, "6");
+B. Comparator c = Collections.reverseOrder();
+Collections.sort(a, c);
+int result = Collections.binarySearch(a, "6");
+C. Comparator c = Collections.reverseOrder();
+Collections.sort(a, c);
+int result = Collections.binarySearch(a, "6",c);
+D. Comparator c = Collections.reverseOrder(a);
+Collections.sort(a, c);
+int result = Collections.binarySearch(a, "6",c);
+E. Comparator c = new InverseComparator(new Comparator());
+Collections.sort(a);
+int result = Collections.binarySearch(a, "6",c);
+Answer: C
+Question 190
+Given:
+34. HashMap props = new HashMap();
+35. props.put("key45", "some value");
+36. props.put("key12", "some other value");
+37. props.put("key39", "yet another value");
+38. Set s = props.keySet();
+39. // insert code here
+What, inserted at line 39, will sort the keys in the props HashMap?
+A. Arrays.sort(s);
+B. s = new TreeSet(s);
+C. Collections.sort(s);
+D. s = new SortedSet(s);
+Answer: B
