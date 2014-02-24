@@ -1,0 +1,124 @@
+Question 1
+Given:
+1. import java.util.*;
+2. public class Example {
+3. public static void main(String[] args) {
+4. // insert code here
+5. set.add(new integer(2));
+6. set.add(new integer(l));
+7. System.out.println(set);
+8. }
+9. }
+Which code, inserted at line 4, guarantees that this program will
+output [1, 2]?
+A. Set set = new TreeSet();
+B. Set set = new HashSet();
+C. Set set = new SortedSet();
+D. List set = new SortedList();
+E. Set set = new LinkedHashSet();
+Answer: A
+Gary: CD are not compilable
+===============================================================================
+Question 2
+Given:
+1. import java.util.*;
+2. public class PQ {
+3. public static void main(String[] args) {
+4. PriorityQueue<String> pq = new PriorityQueue<String>();
+5. pq.add("carrot");
+6. pq.add("apple");
+7. pq.add("banana");
+8. System.out.println(pq.poll() +":" + pq.peek());
+9. }
+10. }
+What is the result?
+A. apple:apple
+B. carrot:apple
+C. apple:banana
+D. banana:apple
+E. carrot:carrot
+F. carrot:banana
+Answer: C
+Gary: see http://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
+===============================================================================
+Question 3
+Given:
+1. import java.util.*;
+2. public class WrappedString {
+3. private String s;
+4. public WrappedString(String s) { this.s = s; }
+5. public static void main(String[] args) {
+6. HashSet<Object> hs = new HashSet<Object>();
+7. WrappedString ws1 = new WrappedString("aardvark");
+8. WrappedString ws2 = new WrappedString("aardvark");
+9. String s1 = new String("aardvark");
+10. String s2 = new String("aardvark");
+11. hs.add(ws1); hs.add(ws2); hs.add(s1); hs.add(s2);
+12. System.out.println(hs.size()); } }
+What is the result?
+A. 0
+B. 1
+C. 2
+D. 3
+E. 4
+F. Compilation fails.
+G. An exception is thrown at runtime.
+Answer: D
+===============================================================================
+Question 4
+Click the Exhibit button.
+1. import java.util.*;
+2. public class TestSet {
+3. enum Example { ONE, TWO, THREE }
+4. public static void main(String[] args) {
+5. Collection coll = new ArrayList();
+6. coll.add(Example.THREE);
+7. coll.add(Example.THREE);
+8. coll.add(Example.THREE);
+9. coll.add(Example.TWO);
+10. coll.add(Example.TWO);
+11. coll.add(Example.ONE);
+12. Set set = new HashSet(coll);
+13. }
+14. }
+Which statement is true about the set variable on line 12?
+A. The set variable contains all six elements from the coll collection,
+and the order is guaranteed to be preserved.
+B. The set variable contains only three elements from the coll
+collection, and the order is guaranteed to be preserved.
+C. The set variable contains all six elements from the coil collection,
+but the order is NOT guaranteed to be preserved.
+D. The set variable contains only three elements from the coil
+collection, but the order is NOT guaranteed to be preserved.
+Answer: D
+===============================================================================
+Question 5
+A programmer has an algorithm that requires a java.util.List that
+provides an efficient implementation of add(0,object), but does
+NOT need to support quick random access. What supports these
+requirements?
+A. java.util.Queue
+B. java.util.ArrayList
+C. java.util.LinearList
+D. java.util.LinkedList
+Answer: D
+===============================================================================
+Question 6
+Which two statements are true about the hashCode method? (Choose
+two.)
+A. The hashCode method for a given class can be used to test for
+object equality and object inequality for that class.
+B. The hashCode method is used by the java.util.SortedSet collection
+class to order the elements within that set.
+C. The hashCode method for a given class can be used to test for
+object inequality, but NOT object equality, for that class.
+D. The only important characteristic of the values returned by a
+hashCode method is that the distribution of values must follow a
+Gaussian distribution.
+E. The hashCode method is used by the java.util.HashSet collection
+class to group the elements within that set into hash buckets for
+swift retrieval.
+Answer: CE
+Gary: AC-hashcode not equal that the object not equal, hashcode equal still need to confirm the equals() method to test equality
+===============================================================================
+
