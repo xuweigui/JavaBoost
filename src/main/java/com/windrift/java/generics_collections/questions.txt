@@ -263,6 +263,7 @@ D. change the method signature on line 11 to:
 public void addStrings(List<? super String> list) {
 E. No changes are necessary. This method compiles without warnings.
 Answer: D
+Gary: not easy to understand at first glance
 ===============================================================================
 Question 14
 Given:
@@ -285,8 +286,9 @@ B. int x = t.findLarger(123, new Double(456));
 C. int x = t.findLarger(123, new Integer(456));
 D. int x = (int) t.findLarger(new Double(123), new Double(456));
 Answer: AC
+Gary: ??????
 ===============================================================================
-Question 182
+Question 15
 Given:
 11. // insert code here
 12. private N min, max;
@@ -308,7 +310,8 @@ D. public class MinMax<N extends Number> {
 E. public class MinMax<? extends Object> {
 F. public class MinMax<N extends Integer> {
 Answer: DF
-Question 183
+===============================================================================
+Question 16
 A programmer must create a generic class MinMax and the type
 parameter of MinMax must implement Comparable. Which
 implementation of MinMax will compile?
@@ -337,7 +340,8 @@ public MinMax() { }
 public <E> void put(E value) { /* store min or max */ }
 }
 Answer: A
-Question 184
+===============================================================================
+Question 17
 Given:
 1. public class Drink implements Comparable {
 2. public String name;
@@ -364,7 +368,8 @@ D. Compilation fails.
 E. The code runs with no output.
 F. An exception is thrown at runtime.
 Answer: B
-Question 185
+===============================================================================
+Question 18
 Given:
 11. List list = // more code here
 12. Collections.sort(list, new MyComparator());
@@ -378,16 +383,18 @@ new MyComparator()));
 D. Collections.sort(list, Collections.reverseOrder(
 new MyComparator()));
 Answer: D
-Question 186
+===============================================================================
+Question 19
 Given:
-int[] myArray=newint[] {1, 2,3,4, 5};
+int[] myArray=new int[] {1, 2,3,4, 5};
 What allows you to create a list from this array?
 A. List myList = myArray.asList();
 B. List myList = Arrays.asList(myArray);
 C. List myList = new ArrayList(myArray);
 D. List myList = Collections.fromArray(myArray);
 Answer: B
-Question 187
+===============================================================================
+Question 20
 Given:
 13. public static void search(List<String> list) {
 14. list.clear();
@@ -405,16 +412,19 @@ E. b
 F. c
 G. The result is undefined.
 Answer: G
-Question 188
+Gary: according to documentation, the result is undefined if the collection
+was not sorted before calling binarySearch.
+===============================================================================
+Question 21
 Given:
 1. import java.util.*;
 2.
 3. public class LetterASort {
 4. public static void main(String[] args) {
 5. ArrayList<String> strings = new ArrayList<String>();
-6. strings.add(’aAaA");
+6. strings.add("aAaA");
 7. strings.add("AaA");
-8. strings.add(’aAa");
+8. strings.add("aAa");
 9. strings.add("AAaa");
 10. Collections.sort(strings);
 11. for (String s: strings) { System.out.print(s + " "); }
@@ -428,7 +438,8 @@ D. AaA AAaa aAaA aAa
 E. aAa AaA aAaA AAaa
 F. An exception is thrown at runtime.
 Answer: C
-Question 189
+===============================================================================
+Question 22
 Given:
 ArrayList a = new ArrayList();
 containing the values {"1", "2", "3", "4", "5", "6", "7", "8"}
@@ -448,7 +459,8 @@ E. Comparator c = new InverseComparator(new Comparator());
 Collections.sort(a);
 int result = Collections.binarySearch(a, "6",c);
 Answer: C
-Question 190
+===============================================================================
+Question 23
 Given:
 34. HashMap props = new HashMap();
 35. props.put("key45", "some value");
@@ -462,3 +474,5 @@ B. s = new TreeSet(s);
 C. Collections.sort(s);
 D. s = new SortedSet(s);
 Answer: B
+Gary: SortedSet is an interface
+===============================================================================
