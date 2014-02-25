@@ -209,7 +209,7 @@ Answer: B
 Gary: check out the MissMatch class
 ===============================================================================
 
-Question 178
+Question 11
 Given a pre-generics implementation of a method:
 11. public static int sum(List list) {
 12. int sum = 0;
@@ -228,7 +228,8 @@ D. replace line 13 with "for (Iterator iter : intList) {"
 E. replace the method declaration with "sum(List<int> intList)"
 F. replace the method declaration with "sum(List<Integer> intList)"
 Answer: ACF
-Question 179
+===============================================================================
+Question 12
 Given:
 classA {}
 class B extends A {}
@@ -243,7 +244,8 @@ E. The type List<? extends A> is assignable to List<A>.
 F. The type List<Object> is assignable to any List reference.
 G. The type List<? extends B> is assignable to List<? extends A>.
 Answer: CDG
-Question 180
+===============================================================================
+Question 13
 Given:
 11. public void addStrings(List list) {
 12. list.add("foo");
@@ -261,7 +263,8 @@ D. change the method signature on line 11 to:
 public void addStrings(List<? super String> list) {
 E. No changes are necessary. This method compiles without warnings.
 Answer: D
-Question 181
+===============================================================================
+Question 14
 Given:
 1. public class Test {
 2. public <T extends Comparable> T findLarger(T x, T y) {
@@ -282,6 +285,7 @@ B. int x = t.findLarger(123, new Double(456));
 C. int x = t.findLarger(123, new Integer(456));
 D. int x = (int) t.findLarger(new Double(123), new Double(456));
 Answer: AC
+===============================================================================
 Question 182
 Given:
 11. // insert code here
