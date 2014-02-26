@@ -2897,28 +2897,7 @@ C. util.BitUtils.process(bytes);
 D. SomeApp cannot use methods in BitUtils.
 E. import util.BitUtils.*; process(bytes);
 Answer: C
-Question
-Given classes defined in two different files:
-1. package util;
-2. public class BitUtils {
-3. private static void process(byte[] b) { }
-4. }
-1. package app;
-2. public class SomeApp {
-3. public static void main(String[] args) {
-4. byte[] bytes = new byte[256];
-5. // insert code here
-6. }
-7. }
-What is required at line 5 in class SomeApp to use the process method
-of BitUtils?
-A. process(bytes);
-B. BitUtils.process(bytes);
-C. app.BitUtils.process(bytes);
-D. util.BitUtils.process(bytes);
-E. import util.BitUtils. *; process(bytes);
-F. SomeApp cannot use the process method in BitUtils.
-Answer: F
+===============================================================================
 Question 193
 Given classes defined in two different files:
 1. package packageA;
@@ -2939,7 +2918,8 @@ B. <msg>text</msg>
 C. An exception is thrown at runtime.
 D. Compilation fails because of an error in line 2 of XMLMessage.
 E. Compilation fails because of an error in line 3 of XMLMessage.
-Answer: E
+Answer: B
+===============================================================================
 Question 194
 Given a file GrizzlyBear.java:
 1. package animals.mammals;
@@ -2967,6 +2947,7 @@ D. add import animals.fish.*; at line 2 in GrizzlyBear.java
 E. add import animals.fish.Salmon.*; at line 2 in GrizzlyBear.java
 F. add import animals.mammals.GrizzlyBear.*;at line 2 in Salmon.java
 Answer: AD
+===============================================================================
 Question 195
 Given a class Repetition:
 1. package utils;
@@ -2992,6 +2973,7 @@ E. import utils.Repetition.twice();
 F. import static utils.Repetition.twice;
 G. static import utils.Repetition.twice;
 Answer: F
+===============================================================================
 Question 196
 Given:
 11. interface DeclareStuff{
@@ -3003,7 +2985,7 @@ Given:
 17. new TestDeclare().doStuff(++x);
 18. }
 19. void doStuff(int s) {
-20. s += EASY + ++s;
+20. s += EASY; ++s;
 21. System.out.println("s " + s);
 22. }
 23. }
@@ -3013,7 +2995,8 @@ B. s 16
 C. s 10
 D. Compilation fails.
 E. An exception is thrown at runtime.
-Answer: D
+Answer: C
+===============================================================================
 Question 197
 Given:
 1. interface DoStuff2 {
@@ -3038,6 +3021,7 @@ E. Compilation fails. Only lines 7 and 12 contain errors.
 F. Compilation fails. Only lines 7 and 13 contain errors.
 G. Compilation fails. Lines 7, 12, and 13 contain errors.
 Answer: A
+===============================================================================
 Question 198
 Given:
 11. public class Counter {
@@ -3055,6 +3039,7 @@ C. args.count()
 D. args.length()
 E. args.getLength()
 Answer: B
+===============================================================================
 Question 199
 Given a correctly compiled class whose source code is:
 1. package com.sun.sjcp;
@@ -3068,16 +3053,17 @@ directory is /foo/, and that the classpath contains "." (current
 directory).
 Which command line correctly runs Commander?
 A. java Commander
-B. java com. sim. sjcp.Commander
+B. java com.sum.sjcp.Commander
 C. java com/sun/sjcp/Commander
 D. java -cp com.sun.sjcp Commander
 E. java -cp com/sun/sjcp Commander
 Answer: B
+===============================================================================
 Question 200
 Given the command line java Pass2 and:
 15. public class Pass2 {
 16. public void main(String [] args) {
-17.int x=6;
+17. int x=6;
 18. Pass2 p = new Pass2();
 19. p.doStuff(x);
 20. System.out.print(" main x = "+ x);
@@ -3094,7 +3080,8 @@ C. doStuffx = 6 main x = 6
 D. doStuffx = 6 main x = 7
 E. doStuffx = 7 main x = 6
 F. doStuffx = 7 main x = 7
-Answer: B
+Answer: C
+===============================================================================
 Question 201
 Given:
 15. public class Yippee {
