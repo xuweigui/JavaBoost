@@ -2166,25 +2166,6 @@ C. Line 3 of class Target can be changed to private int addOne() {
 D. Line 2 of class Target can be changed to private Integer i = 0;
 Answer: D
 ===============================================================================
-Question 137
-Given:
-1. package geometry;
-2. public class Hypotenuse {
-3. public InnerTriangle it = new InnerTriangle();
-4. class InnerTriangle {
-5. public int base;
-6. public int height;
-7. }
-8. }
-Which is true about the class of an object that can reference the
-variable base?
-A. It can be any class.
-B. No class has access to base.
-C. The class must belong to the geometry package.
-D. The class must be a subclass of the class Hypotenuse.
-Answer: C
-Gary: because InnerTriangle is package visible
-===============================================================================
 Question 138
 Given:
 11. class ClassA {}
@@ -2381,15 +2362,15 @@ Answer: A
 Question 147
 147. Given:
 1. public class Base {
-2. public static final String FOO = "foo";
-3. public static void main(String[] args) {
-4. Base b = new Base();
-5. Sub s = new Sub();
-6. System.out.print(Base.FOO);
-7. System.out.print(Sub.FOO);
-8. System.out.print(b.FOO);
-9. System.out.print(s.FOO);
-10. System.out.print(((Base)s).FOO);
+2.  public static final String FOO = "foo";
+3.  public static void main(String[] args) {
+4.      Base b = new Base();
+5.      Sub s = new Sub();
+6.      System.out.print(Base.FOO);
+7.      System.out.print(Sub.FOO);
+8.      System.out.print(b.FOO);
+9.      System.out.print(s.FOO);
+10.     System.out.print(((Base)s).FOO);
 11. } }
 12. class Sub extends Base {public static final String FOO="bar";}
 What is the result?
@@ -2402,6 +2383,7 @@ F. foofoofoobarbar
 G. foofoofoobarfoo
 Answer: D
 Gary: be aware of the line 10
+Check out the code
 ===============================================================================
 Question 148
 Which three statements are true? (Choose three.)
