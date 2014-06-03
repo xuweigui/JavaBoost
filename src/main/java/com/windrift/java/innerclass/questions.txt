@@ -1,0 +1,38 @@
+Question 1
+46. Given:
+10. class Line {
+11. public static class Point { }
+12. }
+13.
+14. class Triangle {
+15. // insert code here
+16. }
+Which code, inserted at line 15, creates an instance of the Point class
+defined in Line?
+A. Point p = new Point();
+B. Line.Point p = new Line.Point();
+C. The Point class cannot be instatiated at line 15.
+D. Line 1 = new Line() ; 1.Point p = new 1.Point();
+Answer: B
+Gary: For D, l.Point is not a type.
+===============================================================================
+
+Question 2
+Given:
+10. class Line {
+11.     public class Point { public int x,y; }
+12.     public Point getPoint() { return new Point(); }
+13.  }
+14.  class Triangle {
+15.     public Triangle() {
+16.         // insert code here
+17.     }
+18.  }
+Which code, inserted at line 16, correctly retrieves a local instance of a
+Point object?
+A. Point p = Line.getPoint();
+B. Line.Point p = Line.getPoint();
+C. Point p = (new Line()).getPoint();
+D. Line.Point p = (new Line()).getPoint();
+Answer: D
+===============================================================================

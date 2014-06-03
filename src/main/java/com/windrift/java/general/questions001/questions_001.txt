@@ -409,6 +409,8 @@ E. Compilation fails because of an error in line 4.
 F. Compilation fails because of an error in line 5.
 Answer: A
 Gary: Intellij indicates the toString method in TestA overrides the toString method in Object
+The method toString already implemented in Object, line 5 can be removed.
+check out the class SameMethodInInterfaceAndSuperClass
 ===============================================================================
 Question 21
 Given:
@@ -752,7 +754,7 @@ C. Compilation fails because of an error in line 13.
 D. Compilation fails because of an error in line 14.
 E. A ClassCastException is thrown at runtime.
 Answer: A
-Gary: array is an object?
+Gary: array is an object? yes
 ===============================================================================
 Question 36
 Given:
@@ -954,43 +956,6 @@ B. Compilation fails because of an error in line 7.
 C. Compilation fails because of an error in line 4.
 D. Compilation succeeds and no runtime errors with class A occur.
 Answer: C
-===============================================================================
-Question 46
-46. Given:
-10. class Line {
-11. public static class Point { }
-12. }
-13.
-14. class Triangle {
-15. // insert code here
-16. }
-Which code, inserted at line 15, creates an instance of the Point class
-defined in Line?
-A. Point p = new Point();
-B. Line.Point p = new Line.Point();
-C. The Point class cannot be instatiated at line 15.
-D. Line 1 = new Line() ; 1.Point p = new 1.Point();
-Answer: B
-Gary: For D, l.Point is not a type.
-
-Question 47
-Given:
-10. class Line {
-11. public class Point { public int x,y; }
-12. public Point getPoint() { return new Point(); }
-13. }
-14. class Triangle {
-15. public Triangle() {
-16. // insert code here
-17. }
-18. }
-Which code, inserted at line 16, correctly retrieves a local instance of a
-Point object?
-A. Point p = Line.getPoint();
-B. Line.Point p = Line.getPoint();
-C. Point p = (new Line()).getPoint();
-D. Line.Point p = (new Line()).getPoint();
-Answer: D
 ===============================================================================
 Question 48
 Given:
@@ -1342,7 +1307,10 @@ D. java -ea test file1
 E. java -ea test file1 file2
 F. java -ea:test test file1
 Answer: BE
-Gary: don't know why yet
+Gary:
+-ea[:<packagename>...|:<classname>]
+    -enableassertions[:<packagename>...|:<classname>]
+                  enable assertions with specified granularity
 ===============================================================================
 Question 65
 Given:
@@ -1822,6 +1790,9 @@ C. java.lang.ExceptionlnlnitializerError
 D. java.lang.ArraylndexOutOfBoundsException
 Answer: C
 Gary: check with the code and test case
+Exception in thread "main" java.lang.ExceptionInInitializerError
+Caused by: java.lang.NullPointerException
+	at com.windrift.java.general.questions001.question84.Foo.<clinit>(Foo.java:12)
 ===============================================================================
 Question 85
 Given:
@@ -1959,6 +1930,7 @@ E. 5
 F. 6
 Answer: C
 Gary: ??? s.toString() is not creating a new String, it should be 4 to me.
+I guess the toUpperCase modifies the original String, so not count
 ===============================================================================
 Question 92
 Given:
@@ -2030,7 +2002,8 @@ B. SHORT LONG
 C. Compilation fails.
 D. An exception is thrown at runtime.
 Answer: C
-Gary: int cannot automatically widen to long
+Gary: int cannot automatically widen to Long, but can be long. So it would be OK if added following method:
+public static void go(long n) {System.out.println(" lONG"); }
 ===============================================================================
 Question 95
 Given:

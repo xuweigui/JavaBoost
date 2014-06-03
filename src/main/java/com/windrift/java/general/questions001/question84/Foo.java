@@ -6,6 +6,7 @@ package com.windrift.java.general.questions001.question84;
 public class Foo
 {
     static int[] a;
+    //static int[] a = new int[1]; is OK
     static
     {
         a[0] = 2;

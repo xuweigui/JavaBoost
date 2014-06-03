@@ -1,4 +1,4 @@
-package com.windrift.java.general.questions001.question46;
+package com.windrift.java.innerclass.question1;
 
 
 public class Line
