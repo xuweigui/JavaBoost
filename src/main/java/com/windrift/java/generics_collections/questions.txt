@@ -18,19 +18,21 @@ D. List set = new SortedList();
 E. Set set = new LinkedHashSet();
 Answer: A
 Gary: CD are not compilable
+SortedSet & SortedMap are interfaces, of which TreeSet and TreeMap are the concrete classes
+While there is no SortedList in java, use Collections.sort() to sort a list.
 ===============================================================================
 Question 2
 Given:
 1. import java.util.*;
 2. public class PQ {
-3. public static void main(String[] args) {
-4. PriorityQueue<String> pq = new PriorityQueue<String>();
-5. pq.add("carrot");
-6. pq.add("apple");
-7. pq.add("banana");
-8. System.out.println(pq.poll() +":" + pq.peek());
-9. }
-10. }
+3.  public static void main(String[] args) {
+4.      PriorityQueue<String> pq = new PriorityQueue<String>();
+5.      pq.add("carrot");
+6.      pq.add("apple");
+7.      pq.add("banana");
+8.      System.out.println(pq.poll() +":" + pq.peek());
+9.  }
+10.}
 What is the result?
 A. apple:apple
 B. carrot:apple
@@ -40,6 +42,7 @@ E. carrot:carrot
 F. carrot:banana
 Answer: C
 Gary: see http://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
+PriorityQueue is sorted
 ===============================================================================
 Question 3
 Given:
@@ -125,26 +128,26 @@ Question 7
 Click the Exhibit button.
 1. import java.util.*;
 2. class KeyMaster {
-3. public int i;
-4. public KeyMaster(int i) { this.i = i; }
-5. public boolean equals(Object o) { return i == ((KeyMaster)o).i; }
-6. public int hashCode() { return i; }
+3.  public int i;
+4.  public KeyMaster(int i) { this.i = i; }
+5.  public boolean equals(Object o) { return i == ((KeyMaster)o).i; }
+6.  public int hashCode() { return i; }
 7. }
 8. public class MapIt {
-9. public static void main(String[] args) {
-10. Set<KeyMaster> set = new HashSet<KeyMaster>();
-11. KeyMaster k1 = new KeyMaster(1);
-12. KeyMaster k2 = new KeyMaster(2);
-13. set.add(k1); set.add(k1);
-14. set.add(k2); set.add(k2);
-15. System.out.print(set.size() + ":");
-16. k2.i = 1;
-17. System.out.print(set.size() + ":");
-18. set.remove(k1);
-19. System.out.print(set.size() + ":");
-20. set.remove(k2);
-21. System.out.print(set.size());
-22. }
+9.  public static void main(String[] args) {
+10.     Set<KeyMaster> set = new HashSet<KeyMaster>();
+11.     KeyMaster k1 = new KeyMaster(1);
+12.     KeyMaster k2 = new KeyMaster(2);
+13.     set.add(k1); set.add(k1);
+14.     set.add(k2); set.add(k2);
+15.     System.out.print(set.size() + ":");
+16.     k2.i = 1;
+17.     System.out.print(set.size() + ":");
+18.     set.remove(k1);
+19.     System.out.print(set.size() + ":");
+20.     set.remove(k2);
+21.     System.out.print(set.size());
+22.  }
 23. }
 What is the result?
 A. 4:4:2:2
@@ -195,9 +198,9 @@ Question 10
 Given:
 11. public static void append(List list) { list.add("0042"); }
 12. public static void main(String[] args) {
-13. List<Integer> intList = new ArrayList<Integer>();
-14. append(intList);
-15. System.out.println(intList.get(0));
+13.     List<Integer> intList = new ArrayList<Integer>();
+14.     append(intList);
+15.     System.out.println(intList.get(0));
 16. }
 ‘What is the result?
 A. 42
@@ -268,13 +271,13 @@ Gary: not easy to understand at first glance
 Question 14
 Given:
 1. public class Test {
-2. public <T extends Comparable> T findLarger(T x, T y) {
-3. if(x.compareTo(y) > 0) {
-4. return x;
-5. } else {
-6. return y;
-7. }
-8. }
+2.  public <T extends Comparable> T findLarger(T x, T y) {
+3.      if(x.compareTo(y) > 0) {
+4.          return x;
+5.      } else {
+6.          return y;
+7.      }
+8.  }
 9. }
 and:
 22. Test t = new Test();
@@ -286,7 +289,7 @@ B. int x = t.findLarger(123, new Double(456));
 C. int x = t.findLarger(123, new Integer(456));
 D. int x = (int) t.findLarger(new Double(123), new Double(456));
 Answer: AC
-Gary: ??????
+Gary: The "T" will be erased with the return type. Thus the parameter type should be compatible to the return type
 ===============================================================================
 Question 15
 Given:

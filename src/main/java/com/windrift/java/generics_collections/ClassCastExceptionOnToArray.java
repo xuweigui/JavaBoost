@@ -8,6 +8,7 @@ import java.util.HashSet;
 /**
  * Collection.toArray() returns Object[]
  * Collection.toArray(T[]) returns T[]
+ * Array does not use generic while collections use.
  */
 public class ClassCastExceptionOnToArray
 {
