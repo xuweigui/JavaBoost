@@ -16,10 +16,11 @@ public class TwoThreads
         catch (Exception e)
         {
             System.out.print("Error ");
-//            e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
+//output is "StartMain Startl EndMain End1 Start2 Error End2"
     public static void main(String[] args)
     {
         System.out.print("StartMain ");
@@ -33,7 +34,6 @@ public class TwoThreads
         System.out.print("EndMain ");
 
     }
-
 
     static class Thread1 extends Thread
     {
