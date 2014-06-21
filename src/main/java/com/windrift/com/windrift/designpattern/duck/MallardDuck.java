@@ -1,14 +1,14 @@
 package com.windrift.com.windrift.designpattern.duck;
 
-public class MallardDuch extends Duck{
+public class MallardDuck extends Duck{
 
-	public MallardDuch () {
+	public MallardDuck() {
 		this.flyBehavior = new FlyWithWings();
 		this.quackBehavior = new Quack();
 	}
 	
 	@Override
-	void dispaly() {
+	void display() {
 		//looks like a mallard
 	}
 

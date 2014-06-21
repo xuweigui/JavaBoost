@@ -8,7 +8,7 @@ public class RedheadDuck extends Duck{
 	}
 	
 	@Override
-	void dispaly() {
+	void display() {
 		// looks like red head
 	}
 

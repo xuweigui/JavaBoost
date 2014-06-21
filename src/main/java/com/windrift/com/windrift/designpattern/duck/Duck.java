@@ -19,7 +19,7 @@ public abstract class Duck {
 	}
 	
 
-	abstract void dispaly();
+	abstract void display();
 
 	public void setFlyBehavior(FlyBehavior flyBehavior) {
 		this.flyBehavior = flyBehavior;

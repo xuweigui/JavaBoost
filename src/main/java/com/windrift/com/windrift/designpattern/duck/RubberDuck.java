@@ -8,7 +8,7 @@ public class RubberDuck extends Duck {
 	}
 	
 	@Override
-	void dispaly() {
+	void display() {
 		System.out.println("I am a rubber duck");
 		
 	}

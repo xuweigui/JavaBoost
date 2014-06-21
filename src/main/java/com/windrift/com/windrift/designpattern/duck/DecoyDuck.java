@@ -7,7 +7,7 @@ public class DecoyDuck extends Duck{
 		this.quackBehavior = new MuteQuack();
 	}
 	@Override
-	void dispaly() {
+	void display() {
 		// looks like Decoy Duck
 		
 	}
