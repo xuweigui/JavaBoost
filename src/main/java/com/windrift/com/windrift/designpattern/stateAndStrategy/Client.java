@@ -1,6 +1,6 @@
 package com.windrift.com.windrift.designpattern.stateAndStrategy;
 
-public class Clinet {
+public class Client {
 
 	/**
 	 * @param args

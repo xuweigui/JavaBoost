@@ -9,6 +9,6 @@ public class GumballMonitor {
 	public void report() {
 		System.out.println("Gumball Machine: " + machine.getLocation());
 		System.out.println("Current Inventory: " + machine.getCount() + " gumballs");
-		System.out.println("Current State: " + machine.getCurentState());
+		System.out.println("Current State: " + machine.getCurrentState());
 	}
 }

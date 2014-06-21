@@ -10,7 +10,6 @@ public class Milk extends CondimentDecorator {
 
 	@Override
 	public String getDescription() {
-		// TODO Auto-generated method stub
 		return beverage.getDescription() + ", Milk";
 	}
 

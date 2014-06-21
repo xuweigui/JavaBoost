@@ -30,7 +30,7 @@ public class GumballMachine {
 		this.location = location;
 	}
 
-	public State getCurentState() {
+	public State getCurrentState() {
 		return currentStateBehavior.getState();
 	}
 	
