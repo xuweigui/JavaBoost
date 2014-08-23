@@ -1,0 +1,11 @@
+package com.windrift.com.windrift.designpattern.visitor;
+
+/**
+ * Created by gary on 21/06/14.
+ */
+public class Wheel implements CarElement {
+    @Override
+    public void accept(CarElementVisitor visitor) {
+        visitor.visit(this);
+    }
+}
