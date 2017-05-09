@@ -26,14 +26,11 @@ public class StopThread2 {
 
 
     public static void main (String[] args) throws InterruptedException {
-        Thread backgroundThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                int i = 0;
+        Thread backgroundThread = new Thread(() -> {
+            int i = 0;
 
-                while (!isStopRequested())
-                    System.out.println(i++);
-            }
+            while (!isStopRequested())
+                System.out.println(i++);
         });
 
         //when using backgroundThread.run(), the thread will never stop.

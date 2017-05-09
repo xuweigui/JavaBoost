@@ -10,6 +10,9 @@
 
     <!-- manage versions by properties -->
     <properties>
+        <java-version>1.8</java-version>
+        <maven.compiler.source>${java-version}</maven.compiler.source>
+        <maven.compiler.target>${java-version}</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -33,7 +36,11 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.2.1.RELEASE</version>
+        </dependency>
 
     </dependencies>
 

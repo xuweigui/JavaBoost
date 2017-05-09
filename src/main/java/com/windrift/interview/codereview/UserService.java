@@ -1,10 +1,16 @@
 package com.windrift.interview.codereview;
 
+import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+@Service
 public class UserService {
     private String userStatusActive = "active";
     private String userStatusPending = "pending";
@@ -13,7 +19,28 @@ public class UserService {
 
     private Map<User, String> allUsers;
 
-    //call this method when system starts up
+    private boolean allUserLoaded;
+
+    @PostConstruct
+    public void printAllUsers() {
+        while (true) {
+            if (allUserLoaded) {
+                //print all users every five minutes
+                Executors.newScheduledThreadPool(1)
+                        .schedule(() -> allUsers.entrySet().stream().forEach(System.out::println),
+                                5, TimeUnit.MINUTES);
+            } else {
+                try {
+                    //wait for 5 minutes
+                    Thread.sleep(TimeUnit.MINUTES.toMillis(5));
+                } catch (Throwable e) {
+                    //ignore the exception
+                }
+            }
+        }
+    }
+
+    @PostConstruct
     public void loadAllusers() {
 
         //suppose this user is read from a DB
@@ -23,6 +50,8 @@ public class UserService {
         allUsers.put(user1, userStatus1);
 
         //load all other users
+
+        allUserLoaded = true;
     }
 
     public void login(User user) {
@@ -75,7 +104,10 @@ public class UserService {
     }
 
     public List<String> getAllActiveUserIds() {
-        return allUsers.keySet().stream().map(allUsers::get).filter(Predicate.isEqual("active")).collect(Collectors.toList());
+        return allUsers.keySet().stream()
+                .map(allUsers::get)
+                .filter(Predicate.isEqual("active"))
+                .collect(Collectors.toList());
     }
 
     private class User {

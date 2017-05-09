@@ -1,0 +1,8 @@
+    private Map<User, String> allUsers; uses User as the key, should override hashcode and equals method
+    allUsers is not initialized, will cause NPE in loadAllusers
+    if (allUsers.get(user) == userStatusActive)   should use equals
+    resetUserPassword case should be a string constant
+    if (status.equals(userStatusActive) | status.equals(userStatusPending))   should be "||"
+
+    allUserLoaded changed in another thread never been picked up in the method printAllUsers, will be always false
+    if allUserLoaded is true, then every time a scheduled executor along with a job will be created.
