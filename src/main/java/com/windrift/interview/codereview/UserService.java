@@ -18,17 +18,14 @@ public class UserService {
     private String userStatusDeleted = "deleted";
 
     private Map<User, String> allUsers;
-
-    private boolean allUserLoaded;
+    private boolean allUserLoaded; //whether all users have been loaded
 
     @PostConstruct
     public void printAllUsers() {
         while (true) {
             if (allUserLoaded) {
                 //print all users every five minutes
-                Executors.newScheduledThreadPool(1)
-                        .schedule(() -> allUsers.entrySet().stream().forEach(System.out::println),
-                                5, TimeUnit.MINUTES);
+                Executors.newScheduledThreadPool(1).schedule(()-> allUsers.entrySet().stream().forEach(System.out::println),5, TimeUnit.MINUTES);
             } else {
                 try {
                     //wait for 5 minutes
@@ -88,7 +85,6 @@ public class UserService {
             allUsers.put(newUser, "active");
         }
     }
-
 
     public void disableUser(User user) {
         String status = allUsers.get(user);
