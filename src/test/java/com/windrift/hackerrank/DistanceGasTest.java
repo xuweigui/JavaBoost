@@ -13,7 +13,7 @@ public class DistanceGasTest {
     public void test1() {
         distances = Arrays.asList(20, 19, 18, 17, 16, 15);
         prices = Arrays.asList(2, 3, 4, 5, 2, 3);
-        Assert.assertEquals(120, DistanceGas.calculate(distances, prices));
+        Assert.assertEquals(238, DistanceGas.calculate(distances, prices));
     }
 
     @Test
