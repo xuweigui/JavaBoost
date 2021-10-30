@@ -13,11 +13,24 @@
         <java-version>1.8</java-version>
         <maven.compiler.source>${java-version}</maven.compiler.source>
         <maven.compiler.target>${java-version}</maven.compiler.target>
+        <findbug.version>3.0.2</findbug.version>
     </properties>
 
     <dependencies>
 
-        <!-- JUnit -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>${findbug.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
