@@ -1,76 +1,56 @@
 package com.imc.game;
 
+import com.imc.game.strategy.game.GameStrategy;
+import com.imc.game.strategy.game.GameStrategyFactory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.stream.Collectors;
+import javax.annotation.Nonnull;
 
 public class GameDemo {
     private static final BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
 
-    private static final Strategy strategy = new RandomStrategy();
-    private static final WinnerSchema winnerSchema = new CommonWinnerSchema();
+    private static final GameStrategy gameStrategy = GameStrategyFactory.buildWeightBasedStrategy();
+    private static final GameResult gameResult = new GameResult();
 
     public static void main(String[] args) throws IOException {
-        System.out.println("Welcome to Game Scissors/Paper/Rock.");
-        printSelectionInstruction();
-        String input = reader.readLine();
-        int userWin = 0;
-        int userLoose = 0;
-        int tie = 0;
-        Symbol userPreviousSymbol = null;
-        Symbol computerPreviousSymbol = null;
-        Result preResult = null;
-        while (!"q".equalsIgnoreCase(input)) {
-            try {
-                int index = Integer.parseInt(input);
-                if (index < 1 || index > Symbol.values().length) {
-                    printInvalidInput(input);
-                    printSelectionInstruction();
-                    input = reader.readLine();
-                } else {
-                    Symbol user = Symbol.values()[index - 1];
-                    Symbol computer = strategy.nextSymbol(computerPreviousSymbol, userPreviousSymbol, preResult);
-                    Result result = winnerSchema.determine(user, computer);
-                    if (result == Result.win) {
-                        userWin++;
-                    } else if (result == Result.loose) {
-                        userLoose++;
-                    } else {
-                        tie++;
-                    }
+        printWelcomeMessage();
 
-                    userPreviousSymbol = user;
-                    computerPreviousSymbol = computer;
-                    preResult = result;
-
-                    System.out.println("Your showed: " + user + ", computer showed: " + computer + ". Result is: " + result);
-
-                    printSelectionInstruction();
-                    input = reader.readLine();
-
-                }
-
-            } catch (NumberFormatException e) {
-                printInvalidInput(input);
-                printSelectionInstruction();
-                input = reader.readLine();
-            }
-
+        Optional<Play> userPlay = readUserPlay();
+        while (userPlay.isPresent()) {
+            playOneRound(userPlay);
+            userPlay = readUserPlay();
         }
 
-        printGameResult(userWin, userLoose, tie);
-
+        printGameResult();
     }
 
-    private static void printGameResult(int win, int loose, int tie) {
+
+    private static void playOneRound(@Nonnull Optional<Play> userPlay) throws IOException {
+        Play user = userPlay.get();
+        Play computer = gameStrategy.nextPlayStrategy().nextPlay();
+        Result result = user.check(computer);
+        PlayResult playResult = new PlayResult(user, computer, result);
+        gameStrategy.accept(playResult);
+        gameResult.accept(playResult);
+        System.out.println("Your showed: " + user + ", computer showed: " + computer + ". PlayResult is: " + playResult);
+    }
+
+    private static void printWelcomeMessage() {
+        System.out.println("Welcome to Game Scissors/Paper/Rock.");
+    }
+
+    private static void printGameResult() {
         System.out.println("This is the game result: ");
-        System.out.println("Win: " + win + ", loose: " + loose + ", tie: " + tie);
-        if (win > loose) {
+        System.out.println("Win: " + gameResult.getUserWin() + ", lose: " + gameResult.getUserLose() + ", tie: " + gameResult.getTie());
+        Result result = gameResult.gameResult();
+        if (result == Result.WIN) {
             System.out.println("You won! Well done!");
-        } else if (win < loose) {
+        } else if (result == Result.LOSE) {
             System.out.println("You lost! Try next time!");
         } else {
             System.out.println("It is a tie!");
@@ -81,8 +61,26 @@ public class GameDemo {
         System.out.println("Invalid input: " + input);
     }
 
-    private static void printSelectionInstruction() {
+    //return Optional.empty if user quits
+    @Nonnull
+    private static Optional<Play> readUserPlay() throws IOException {
         System.out.println("Please input a number to play, type q to quit the game");
-        System.out.println(Arrays.stream(Symbol.values()).map(s -> s.ordinal() + 1 + ": " + s).collect(Collectors.joining(", ")));
+        System.out.println(Arrays.stream(Play.values()).map(s -> s.ordinal() + 1 + ": " + s).collect(Collectors.joining(", ")));
+        String input = reader.readLine();
+        boolean valid = false;
+        if ("q".equalsIgnoreCase(input)) {
+            return Optional.empty();
+        }
+        try {
+            int index = Integer.parseInt(input);
+            if (index < 1 || index > Play.values().length) {
+                printInvalidInput(input);
+                return readUserPlay();
+            }
+            return Optional.of(Play.values()[index - 1]);
+        } catch (NumberFormatException e) {
+            printInvalidInput(input);
+            return readUserPlay();
+        }
     }
 }
