@@ -1,3 +1,0 @@
-design pattern:
-
-Stragegy, State, 
